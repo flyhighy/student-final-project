@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+	"http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<!-- 指定Struts 2配置文件的根元素 -->
+<struts>
+
+	<constant name="struts.multipart.saveDir" value="/tmp"></constant>
+
+	<package name="struts" extends="struts-default">
+		
+		<!--管理员基地介绍-->
+		<action name="adminShortdec" class="com.project.admin.shortdec" method="adminShortdec">
+			<result name="success">/files/pages/admin-shortdec.jsp</result>
+			<result name="input">/files/pages/admin-shortdec.jsp</result>
+		</action>
+		
+		<!--管理员编辑基地介绍-->
+		<action name="editShortdec" class="com.project.admin.editShortdec" method="editShortdec">
+			<result name="success">/files/pages/admin-editShortdec.jsp</result>
+			<result name="input">/files/pages/admin-editShortdec.jsp</result>
+		</action>
+		
+		<!--管理员浏览资讯-->
+		<action name="adminNews" class="com.project.admin.news" method="adminNews">
+			<result name="success">/files/pages/admin-news.jsp</result>
+			<result name="input">/files/pages/admin-news.jsp</result>
+		</action>
+		
+		<!--管理员添加资讯-->
+		<action name="createNews" class="com.project.admin.createNews" method="createNews">
+			<result name="success">/files/pages/admin-createNews.jsp</result>
+			<result name="input">/files/pages/admin-createNews.jsp</result>
+		</action>
+		
+		<!--管理员浏览通知-->
+		<action name="adminMessage" class="com.project.admin.message" method="adminMessage">
+			<result name="success">/files/pages/admin-messages.jsp</result>
+			<result name="input">/files/pages/admin-messages.jsp</result>
+		</action>
+		
+		<!--管理员发布通知-->
+		<action name="createMessage" class="com.project.admin.createMessage" method="createMessage">
+			<result name="success">/files/pages/admin-createMessage.jsp</result>
+			<result name="input">/files/pages/admin-createMessage.jsp</result>
+		</action>
+
+	</package>
+</struts>

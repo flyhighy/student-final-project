@@ -1,0 +1,30 @@
+body{
+    /*background: url("../images/bg.png");*/
+}
+
+footer{
+    width: 1000px;
+    margin: auto;
+    font-family:"Microsoft YaHei",simsun;;
+}
+
+.links{
+    border: #ccc solid 1px;
+    border-radius: 3px;
+}
+.links li{
+    display: inline-block;
+    list-style: none;
+    width: 160px;
+}
+
+.links li a{
+    display: inline-block;
+    padding: 5px;
+    font-size: 14px;
+    text-decoration: none;
+    color: #5EA9B3;
+}
+.links li a:hover{
+    color: #000000;
+}
