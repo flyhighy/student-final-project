@@ -24,7 +24,7 @@
        	 padding:20px;
         }
         	
-        .news{
+        .mynews{
         	width:717px;
         }
         
@@ -52,7 +52,7 @@
     </style>
     <script>
 	    KindEditor.ready(function(K) {
-	   	 editor1 = K.create('textarea[name="content1"]', {
+	   	 editor1 = K.create('textarea[name="news.content"]', {
 	   		cssPath : 'kindeditor/plugins/code/prettify.css',
 	   		uploadJson : 'kindeditor/jsp/upload_json.jsp',
 	   		fileManagerJson : 'kindeditor/jsp/file_manager_json.jsp',
@@ -69,19 +69,19 @@
 <iframe src="files/pages/admin-header.jsp" marginheight="0" hidefocus="true" frameborder="0" scrolling="no" allowtransparency="yes" seamless  tabindex="" style="width: 100%; height:181px;;"></iframe>
 <div class="content-wrapper">
 	<div class="content clearfix">
-		<form class="news" action="" method="post">
+		<form class="mynews" action="saveNews" method="post">
 			<b>标题</b>
 			<br>
-			<input type="text" name="title" id="title">
+			<input type="text" name="news.title" id="title">
 			<br>
 			<b>作者</b>
 			<br>
-			<input type="text" name="author">
+			<input type="text" name="news.author">
 			<br>
 			<b>来源</b>
 			<br> 
-			<input type="text" name="source" class="source">
-			<textarea name="content1" cols="100" rows="8" style="width:717px;height:500px;visibility:hidden;"></textarea>
+			<input type="text" name="news.source" class="source">
+			<textarea name="news.content" cols="100" rows="8" style="width:717px;height:500px;visibility:hidden;"></textarea>
 		    <input class="cancel" type="button" value="取消">
 			<input class="save" type="submit" value="保存">
 		</form>

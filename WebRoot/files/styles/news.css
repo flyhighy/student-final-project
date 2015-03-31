@@ -48,13 +48,14 @@ p{
         	cursor:pointer;
         }
         
+        
         .head{
         	margin-bottom:10px;
-        	padding-bottom:5px;
+        	padding:5px 0;
         	border-bottom:#ccc solid 1px;
         }
         .head-choose{
-        	display:inline-block;
+        	display:none;
         	width:50px;
         }
        .head-title{
@@ -81,7 +82,7 @@ p{
        }
        
        .choose{
-	       display:inline-block;
+	       display:none;
         	width:50px;
        }
        
@@ -99,4 +100,26 @@ p{
        		width:70px;
        		display:inline-block;
        }
+     
+      .delmore{
+      		padding-bottom:10px;
+      		border-bottom:1px solid #ccc;
+      		font-size:14px;
+      		display:none;
+      }
+      
+      .delmore a{
+      	  color: #26709A;
+      	  padding-left:2px;
+      	  text-decoration:none;
+      	  
+      }
+      
+      .delmore input{
+      	  vertical-align: -2px
+      }
+      
+      .news-list{
+      		font-size:15px;
+      }
   

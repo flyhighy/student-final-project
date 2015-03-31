@@ -8,41 +8,68 @@
 	<constant name="struts.multipart.saveDir" value="/tmp"></constant>
 
 	<package name="struts" extends="struts-default">
+		<!-- 登录界面 -->
+		<action name="login">
+			<result>/files/pages/login.jsp</result>
+		</action>
+		
+		<!-- 确认登录 -->
+		<action name="loginTo" class="loginTo" method="login">
+			<result name="success"  type="redirectAction">adminShortdec</result>
+			<result name="input">/files/pages/login.jsp</result>
+		</action>
 		
 		<!--管理员基地介绍-->
-		<action name="adminShortdec" class="com.project.admin.shortdec" method="adminShortdec">
+		<action name="adminShortdec" class="adminShortdec" method="adminShortdec">
 			<result name="success">/files/pages/admin-shortdec.jsp</result>
-			<result name="input">/files/pages/admin-shortdec.jsp</result>
+			<result name="login"  type="redirectAction">login</result>
+		</action>
+		
+		<!--获取基地介绍-->
+		<action name="getShortdec" class="getShortdec" method="getShortdec">
 		</action>
 		
 		<!--管理员编辑基地介绍-->
 		<action name="editShortdec" class="com.project.admin.editShortdec" method="editShortdec">
 			<result name="success">/files/pages/admin-editShortdec.jsp</result>
-			<result name="input">/files/pages/admin-editShortdec.jsp</result>
+			<result name="login"  type="redirectAction">login</result>
+		</action>
+		
+		<!--管理员保存基地介绍-->
+		<action name="saveShortdec" class="saveShortdec" method="saveShortdec">
+			<result name="success" type="redirectAction">adminShortdec</result>
+			<result name="login"  type="redirectAction">login</result>
 		</action>
 		
 		<!--管理员浏览资讯-->
-		<action name="adminNews" class="com.project.admin.news" method="adminNews">
+		<action name="adminNews" class="adminNews" method="adminNews">
 			<result name="success">/files/pages/admin-news.jsp</result>
-			<result name="input">/files/pages/admin-news.jsp</result>
+			<result name="login"  type="redirectAction">login</result>
 		</action>
 		
 		<!--管理员添加资讯-->
-		<action name="createNews" class="com.project.admin.createNews" method="createNews">
+		<action name="createNews" class="createNews" method="createNews">
 			<result name="success">/files/pages/admin-createNews.jsp</result>
-			<result name="input">/files/pages/admin-createNews.jsp</result>
+			<result name="login"  type="redirectAction">login</result>
+		</action>
+		
+		<!--管理员保存资讯-->
+		<action name="saveNews" class="saveNews" method="saveNews">
+			<result name="success" type="redirectAction">adminNews</result>
+			<result name="login"  type="redirectAction">login</result>
 		</action>
 		
 		<!--管理员浏览通知-->
 		<action name="adminMessage" class="com.project.admin.message" method="adminMessage">
 			<result name="success">/files/pages/admin-messages.jsp</result>
-			<result name="input">/files/pages/admin-messages.jsp</result>
+			<result name="login"  type="redirectAction">login</result>
 		</action>
 		
 		<!--管理员发布通知-->
 		<action name="createMessage" class="com.project.admin.createMessage" method="createMessage">
 			<result name="success">/files/pages/admin-createMessage.jsp</result>
 			<result name="input">/files/pages/admin-createMessage.jsp</result>
+			<result name="login"  type="redirectAction">login</result>
 		</action>
 
 	</package>

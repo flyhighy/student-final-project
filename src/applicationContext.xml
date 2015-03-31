@@ -25,12 +25,69 @@
 	</property>
 	<property name="mappingResources">
 	   <list>
-	 
+			<value>com/project/bean/Achievement.hbm.xml</value>
+			<value>com/project/bean/Announcement.hbm.xml</value>
+			<value>com/project/bean/Download.hbm.xml</value>
+			<value>com/project/bean/Form.hbm.xml</value>
+			<value>com/project/bean/News.hbm.xml</value>
+			<value>com/project/bean/User.hbm.xml</value>
+			<value>com/project/bean/Shortdec.hbm.xml</value>
 	   </list>
 	</property>
     </bean>
     
-    
+    <bean id="adminDao" class="com.project.DaoImpl.adminDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="shortdecDao" class="com.project.DaoImpl.shortdecDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="newsDao" class="com.project.DaoImpl.newsDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<!-- 处理登陆的业务 -->
+	<bean id="loginTo" class="com.project.admin.loginAction" scope="prototype">
+		<property name="adminDao" ref="adminDao"></property>
+	</bean>
+	
+	<!-- 保存基地介绍的业务 -->
+	<bean id="adminShortdec" class="com.project.admin.shortdec" scope="prototype">
+		<property name="shortdecDao" ref="shortdecDao"></property>
+	</bean>
+	
+	<!-- 获取基地介绍的业务 -->
+	<bean id="getShortdec" class="com.project.admin.getShortdec" scope="prototype">
+		<property name="shortdecDao" ref="shortdecDao"></property>
+	</bean>
+	
+	
+	<!-- 保存基地介绍的业务 -->
+	<bean id="saveShortdec" class="com.project.admin.saveShortdec" scope="prototype">
+		<property name="shortdecDao" ref="shortdecDao"></property>
+	</bean>
+	
+	<!-- 管理员浏览资讯的业务 -->
+	<bean id="adminNews" class="com.project.admin.news" scope="prototype">
+		<property name="newsDao" ref="newsDao"></property>
+	</bean>
+	
+	<!-- 添加资讯的业务 -->
+	<bean id="createNews" class="com.project.admin.createNews" scope="prototype">
+	</bean>
+	
+	<!-- 保存资讯的业务 -->
+	<bean id="saveNews" class="com.project.admin.saveNews" scope="prototype">
+		<property name="newsDao" ref="newsDao"></property>
+	</bean>
     
     
 </beans>
