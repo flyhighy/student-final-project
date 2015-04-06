@@ -12,7 +12,7 @@ public class Announcement implements java.io.Serializable {
 
 	private Integer id;
 	private String title;
-	private String auther;
+	private String author;
 	private Date time;
 	private String content;
 	private String attachment1;
@@ -26,17 +26,17 @@ public class Announcement implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public Announcement(String title, String auther, String content) {
+	public Announcement(String title, String author, String content) {
 		this.title = title;
-		this.auther = auther;
+		this.author = author;
 		this.content = content;
 	}
 
 	/** full constructor */
-	public Announcement(String title, String auther, Date time, String content,
+	public Announcement(String title, String author, Date time, String content,
 			String attachment1, String attachment2, String attachment3) {
 		this.title = title;
-		this.auther = auther;
+		this.author = author;
 		this.time = time;
 		this.content = content;
 		this.attachment1 = attachment1;
@@ -62,12 +62,12 @@ public class Announcement implements java.io.Serializable {
 		this.title = title;
 	}
 
-	public String getAuther() {
-		return this.auther;
+	public String getAuthor() {
+		return this.author;
 	}
 
-	public void setAuther(String auther) {
-		this.auther = auther;
+	public void setAuthor(String author) {
+		this.author = author;
 	}
 
 	public Date getTime() {

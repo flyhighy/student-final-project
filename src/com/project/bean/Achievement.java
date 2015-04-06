@@ -13,6 +13,8 @@ public class Achievement implements java.io.Serializable {
 	private Integer id;
 	private String content;
 	private Date time;
+	private String author;
+	private String name;
 
 	// Constructors
 
@@ -20,15 +22,12 @@ public class Achievement implements java.io.Serializable {
 	public Achievement() {
 	}
 
-	/** minimal constructor */
-	public Achievement(String content) {
-		this.content = content;
-	}
-
 	/** full constructor */
-	public Achievement(String content, Date time) {
+	public Achievement(String content, Date time, String author, String name) {
 		this.content = content;
 		this.time = time;
+		this.author = author;
+		this.name = name;
 	}
 
 	// Property accessors
@@ -55,6 +54,22 @@ public class Achievement implements java.io.Serializable {
 
 	public void setTime(Date time) {
 		this.time = time;
+	}
+
+	public String getAuthor() {
+		return this.author;
+	}
+
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 }

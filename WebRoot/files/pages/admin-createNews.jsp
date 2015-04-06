@@ -82,7 +82,7 @@
 			<br> 
 			<input type="text" name="news.source" class="source">
 			<textarea name="news.content" cols="100" rows="8" style="width:717px;height:500px;visibility:hidden;"></textarea>
-		    <input class="cancel" type="button" value="取消">
+		    <input class="cancel" type="button" value="取消" onclick="window.history.go(-1)">
 			<input class="save" type="submit" value="保存">
 		</form>
 	</div>

@@ -32,6 +32,7 @@
 			<value>com/project/bean/News.hbm.xml</value>
 			<value>com/project/bean/User.hbm.xml</value>
 			<value>com/project/bean/Shortdec.hbm.xml</value>
+			<value>com/project/bean/Competition.hbm.xml</value>
 	   </list>
 	</property>
     </bean>
@@ -54,10 +55,37 @@
 		</property>
 	</bean>
 	
+	<bean id="announcementDao" class="com.project.DaoImpl.announcementDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="competitionDao" class="com.project.DaoImpl.competitionDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="achievementDao" class="com.project.DaoImpl.achievementDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="userDao" class="com.project.DaoImpl.userDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
 	<!-- 处理登陆的业务 -->
 	<bean id="loginTo" class="com.project.admin.loginAction" scope="prototype">
 		<property name="adminDao" ref="adminDao"></property>
 	</bean>
+	
+	
+	<!-- *********************************管理员处理基地介绍业务块**************************************** -->
 	
 	<!-- 保存基地介绍的业务 -->
 	<bean id="adminShortdec" class="com.project.admin.shortdec" scope="prototype">
@@ -71,9 +99,11 @@
 	
 	
 	<!-- 保存基地介绍的业务 -->
-	<bean id="saveShortdec" class="com.project.admin.saveShortdec" scope="prototype">
+	<bean id="saveShortdec" class="com.project.admin.shortdec" scope="prototype">
 		<property name="shortdecDao" ref="shortdecDao"></property>
 	</bean>
+	
+	<!-- *********************************管理员处理资讯业务块**************************************** -->
 	
 	<!-- 管理员浏览资讯的业务 -->
 	<bean id="adminNews" class="com.project.admin.news" scope="prototype">
@@ -81,13 +111,177 @@
 	</bean>
 	
 	<!-- 添加资讯的业务 -->
-	<bean id="createNews" class="com.project.admin.createNews" scope="prototype">
+	<bean id="createNews" class="com.project.admin.news" scope="prototype">
 	</bean>
 	
 	<!-- 保存资讯的业务 -->
-	<bean id="saveNews" class="com.project.admin.saveNews" scope="prototype">
+	<bean id="saveNews" class="com.project.admin.news" scope="prototype">
 		<property name="newsDao" ref="newsDao"></property>
 	</bean>
+	
+	<!-- 删除资讯的业务 -->
+	<bean id="delNews" class="com.project.admin.news" scope="prototype">
+		<property name="newsDao" ref="newsDao"></property>
+	</bean>
+	
+	<!-- 编辑资讯的业务 -->
+	<bean id="editNews" class="com.project.admin.news" scope="prototype">
+		<property name="newsDao" ref="newsDao"></property>
+	</bean>
+	
+	<!-- 更新资讯的业务 -->
+	<bean id="updateNews" class="com.project.admin.news" scope="prototype">
+		<property name="newsDao" ref="newsDao"></property>
+	</bean>
+	
+	<!-- 查看资讯的业务 -->
+	<bean id="newsDetail" class="com.project.admin.news" scope="prototype">
+		<property name="newsDao" ref="newsDao"></property>
+	</bean>
+	
+	<!-- 批量删除资讯的业务 -->
+	<bean id="delMany" class="com.project.admin.news" scope="prototype">
+		<property name="newsDao" ref="newsDao"></property>
+	</bean>
+	
+	<!-- *********************************管理员处理通知业务块**************************************** -->
     
-    
+    <!-- 保存通知的业务 -->
+	<bean id="saveMessage" class="com.project.admin.message" scope="prototype">
+		<property name="announcementDao" ref="announcementDao"></property>
+	</bean>
+	
+	<!-- 浏览通知的业务 -->
+	<bean id="adminMessage" class="com.project.admin.message" scope="prototype">
+		<property name="announcementDao" ref="announcementDao"></property>
+	</bean>
+	
+	<!-- 删除通知的业务 -->
+	<bean id="delMessage" class="com.project.admin.message" scope="prototype">
+		<property name="announcementDao" ref="announcementDao"></property>
+	</bean>
+	
+	<!-- 编辑通知的业务 -->
+	<bean id="editMessage" class="com.project.admin.message" scope="prototype">
+		<property name="announcementDao" ref="announcementDao"></property>
+	</bean>
+	
+	<!-- 更新通知的业务 -->
+	<bean id="updateMessage" class="com.project.admin.message" scope="prototype">
+		<property name="announcementDao" ref="announcementDao"></property>
+	</bean>
+	
+	<!-- 查看通知的业务 -->
+	<bean id="messageDetail" class="com.project.admin.message" scope="prototype">
+		<property name="announcementDao" ref="announcementDao"></property>
+	</bean>
+	
+	<!-- 批量删除通知的业务 -->
+	<bean id="delManyMsg" class="com.project.admin.message" scope="prototype">
+		<property name="announcementDao" ref="announcementDao"></property>
+	</bean>
+	
+	<!-- *********************************管理员处理参赛经历业务块**************************************** -->
+	
+	<!-- 浏览参赛经历的业务 -->
+	<bean id="adminCompetition" class="com.project.admin.competition" scope="prototype">
+		<property name="competitionDao" ref="competitionDao"></property>
+	</bean>
+	
+	<!-- 增加参赛经历的业务 -->
+	<bean id="createCompetition" class="com.project.admin.competition" scope="prototype">
+		<property name="competitionDao" ref="competitionDao"></property>
+	</bean>
+	
+	<!-- 保存参赛经历的业务 -->
+	<bean id="saveCompetition" class="com.project.admin.competition" scope="prototype">
+		<property name="competitionDao" ref="competitionDao"></property>
+	</bean>
+	
+	<!-- 删除参赛经历的业务 -->
+	<bean id="delCompetition" class="com.project.admin.competition" scope="prototype">
+		<property name="competitionDao" ref="competitionDao"></property>
+	</bean>
+	
+	<!-- 批量删除参赛经历的业务 -->
+	<bean id="delManyCompetition" class="com.project.admin.competition" scope="prototype">
+		<property name="competitionDao" ref="competitionDao"></property>
+	</bean>
+	
+	<!-- 编辑参赛经历的业务 -->
+	<bean id="editCompetition" class="com.project.admin.competition" scope="prototype">
+		<property name="competitionDao" ref="competitionDao"></property>
+	</bean>
+	
+	<!-- 更新参赛经历的业务 -->
+	<bean id="updateCompetition" class="com.project.admin.competition" scope="prototype">
+		<property name="competitionDao" ref="competitionDao"></property>
+	</bean>
+	
+	<!-- *********************************管理员处理荣誉成果业务块**************************************** -->
+	
+	<!-- 浏览荣誉成果的业务 -->
+	<bean id="adminAchievement" class="com.project.admin.achievement" scope="prototype">
+		<property name="achievementDao" ref="achievementDao"></property>
+	</bean>
+	
+	<!-- 增加荣誉成果的业务 -->
+	<bean id="createAchievement" class="com.project.admin.achievement" scope="prototype">
+		<property name="achievementDao" ref="achievementDao"></property>
+	</bean>
+	
+	<!-- 保存荣誉成果的业务 -->
+	<bean id="saveAchievement" class="com.project.admin.achievement" scope="prototype">
+		<property name="achievementDao" ref="achievementDao"></property>
+	</bean>
+	
+	<!-- 删除荣誉成果的业务 -->
+	<bean id="delAchievement" class="com.project.admin.achievement" scope="prototype">
+		<property name="achievementDao" ref="achievementDao"></property>
+	</bean>
+	
+	<!-- 批量删除荣誉成果的业务 -->
+	<bean id="delManyAchievement" class="com.project.admin.achievement" scope="prototype">
+		<property name="achievementDao" ref="achievementDao"></property>
+	</bean>
+	
+	<!-- 编辑荣誉成果的业务 -->
+	<bean id="editAchievement" class="com.project.admin.achievement" scope="prototype">
+		<property name="achievementDao" ref="achievementDao"></property>
+	</bean>
+	
+	<!-- 更新荣誉成果的业务 -->
+	<bean id="updateAchievement" class="com.project.admin.achievement" scope="prototype">
+		<property name="achievementDao" ref="achievementDao"></property>
+	</bean>
+	
+	<!-- *********************************管理员处理荣誉成果业务块**************************************** -->
+	
+    <bean id="adminUser" class="com.project.admin.userManage" scope="prototype">
+		<property name="userDao" ref="userDao"></property>
+	</bean>
+	
+	<bean id="addUser" class="com.project.admin.userManage" scope="prototype">
+		<property name="userDao" ref="userDao"></property>
+	</bean>
+	
+	<bean id="saveUser" class="com.project.admin.userManage" scope="prototype">
+		<property name="userDao" ref="userDao"></property>
+	</bean>
+	
+	<bean id="editUser" class="com.project.admin.userManage" scope="prototype">
+		<property name="userDao" ref="userDao"></property>
+	</bean>
+	
+	<bean id="delUser" class="com.project.admin.userManage" scope="prototype">
+		<property name="userDao" ref="userDao"></property>
+	</bean>
+	
+	<bean id="updateUser" class="com.project.admin.userManage" scope="prototype">
+		<property name="userDao" ref="userDao"></property>
+	</bean>
+	
+	<bean id="delManyUser" class="com.project.admin.userManage" scope="prototype">
+		<property name="userDao" ref="userDao"></property>
+	</bean>
 </beans>

@@ -39,7 +39,7 @@ public class loginAction extends ActionSupport {
 		}else{
 			if(user1.getPassword().equals(user.getPassword())){
 				Map session=ActionContext.getContext().getSession();
-				session.put("user", user);
+				session.put("user", user1);
 				return SUCCESS;
 			}
 		}

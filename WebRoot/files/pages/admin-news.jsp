@@ -17,7 +17,7 @@
 		body.delegate("click",".checkedmore",function(){
 			if(flag){
 				body.one(".checkedmore").attr("value","退出操作");
-				body.one(".delmore").css("display","inline-block");
+				body.one(".delmore").css("display","block");
 				body.one(".head-choose").css("display","inline-block");
 				body.all(".choose").css("display","inline-block");
 				flag=false;
@@ -32,12 +32,16 @@
 		
 		body.delegate("click",".check-all",function(){
 			if(checkAll){
-				body.all(".choose-box").prop("checked","true");
+				body.all(".choose-box").prop("checked",true);
 				checkAll = false;
 			}else{
-				body.all(".choose-box").prop("checked","false");
+				body.all(".choose-box").prop("checked",false);
 				checkAll = true;
 			}
+		});
+		
+		body.delegate("click",".del-many",function(){
+			document.getElementById("delMany").submit();
 		});
 	})
 </script>
@@ -54,8 +58,9 @@
 	    <div class="news-list">
 	    	<div class="delmore">
 	    	<input class="check-all" type="checkbox"><span>全选</span>
-	    	<a   href="javascript:void(0)">全部删除</a>
+	    	<a href="javascript:void(0)" class="del-many">全部删除</a>
 	    	</div>
+	    	<form id="delMany" action="delMany" method="post">
 	    	<div class="head">
 	    		<span class="head-choose">选择</span>
 	    		<span class="head-title">资讯标题</span>
@@ -66,16 +71,17 @@
 	    	</div>
 	    	<s:iterator value="#request.list" id="ut">
 	    	<p class="news-item">
-	    		<span  class="choose"><input class="choose-box" type="checkbox"></span>
-	    		<a class="news-title" href="#"><s:property value="#ut.title"/></a> 
+	    		<span  class="choose"><input name="checkOption" class="choose-box" type="checkbox" value="<s:property value='#ut.id'/>"></span>
+	    		<a class="news-title" href="newsDetail?news.id=<s:property value="#ut.id"/>"><s:property value="#ut.title"/></a> 
 	    		<span class="operator"><s:a href="editNews?news.id=%{#ut.id}">编辑</s:a>|<s:a href="delNews?news.id=%{#ut.id}">删除</s:a></span>
 	    		<span class="time"><s:date name='%{#ut.time}' format='yyyy-MM-dd'/></span>
 	    		<span class="author"><s:property value="#ut.author"/></span>
 	    		<span class="click-num"><s:property value="#ut.number"/></span>
 	    	</p>
 	    	</s:iterator>
-
+	</form>
 	    </div>
+	  
 	</div>
 </body>
 </html>

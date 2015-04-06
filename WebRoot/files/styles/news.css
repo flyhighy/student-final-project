@@ -64,21 +64,25 @@ p{
        }
        
         .head-time{
+        	text-align:center;
        		width:150px;
        		display:inline-block;
        }
        
        .head-num{
+       		text-align:center;
        		width:70px;
        		display:inline-block;
        }
         .head-author{
+        	text-align:center;
        		width:60px;
        		display:inline-block;
        }
        
        .head-op{
-       	float:right;
+	       text-align:center;
+	       float:right;
        }
        
        .choose{
@@ -87,21 +91,25 @@ p{
        }
        
        .time{
+       		text-align:center;
        		width:150px;
        		display:inline-block;
        }
        
        .author{
+       		text-align:center;
        		width:60px;
        		display:inline-block;
        }
        
        .click-num{
+       		text-align:center;
        		width:70px;
        		display:inline-block;
        }
      
       .delmore{
+      		
       		padding-bottom:10px;
       		border-bottom:1px solid #ccc;
       		font-size:14px;

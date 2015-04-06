@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
 <html>
 <head lang="en">
@@ -52,7 +53,7 @@
     </style>
     <script>
 	    KindEditor.ready(function(K) {
-	   	 editor1 = K.create('textarea[name="content1"]', {
+	   	 editor1 = K.create('textarea[name="announcement.content"]', {
 	   		cssPath : 'kindeditor/plugins/code/prettify.css',
 	   		uploadJson : 'kindeditor/jsp/upload_json.jsp',
 	   		fileManagerJson : 'kindeditor/jsp/file_manager_json.jsp',
@@ -69,17 +70,17 @@
 <iframe src="files/pages/admin-header.jsp" marginheight="0" hidefocus="true" frameborder="0" scrolling="no" allowtransparency="yes" seamless  tabindex="" style="width: 100%; height:181px;;"></iframe>
 <div class="content-wrapper">
 	<div class="content clearfix">
-		<form class="news" action="" method="post">
+		<form class="news" action="saveMessage" method="post">
 			<b>标题</b>
 			<br>
-			<input type="text" name="title" id="title">
+			<input type="text" name="announcement.title" id="title">
 			<br>
 			<b>发布者</b>
 			<br>
-			<input type="text" name="author">
+			<s:textfield type="text" name="announcement.author" value="%{#session.user.name}"/>
 			<br>
 			<b>正文</b>
-			<textarea name="content1" cols="100" rows="8" style="width:717px;height:500px;visibility:hidden;"></textarea>
+			<textarea name="announcement.content" cols="100" rows="8" style="width:717px;height:500px;visibility:hidden;"></textarea>
 		    <input class="cancel" type="button" value="取消">
 			<input class="save" type="submit" value="发布">
 		</form>

@@ -30,5 +30,19 @@ public class newsDaoImpl extends HibernateDaoSupport implements newsDao {
 		}
 				
 	}
+	
+	public News findNews(int id){
+		String hql = "from News news where news.id=?";
+		return (News) this.getHibernateTemplate().find(hql,id).get(0);
+	}
+	
+	public void delNews(int id){
+		News news=this.findNews(id);
+		this.getHibernateTemplate().delete(news);
+	}
+	
+	public void updateNews(News news){
+		this.getHibernateTemplate().update(news);
+	}
 
 }

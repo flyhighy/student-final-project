@@ -10,6 +10,17 @@ import com.project.bean.User;
 
 public class shortdec extends ActionSupport {
 	
+	private shortdecDao shortdecDao;
+	private Shortdec shortdec;
+	
+	public Shortdec getShortdec() {
+		return shortdec;
+	}
+
+	public void setShortdec(Shortdec shortdec) {
+		this.shortdec = shortdec;
+	}
+
 	public shortdecDao getShortdecDao() {
 		return shortdecDao;
 	}
@@ -18,7 +29,7 @@ public class shortdec extends ActionSupport {
 		this.shortdecDao = shortdecDao;
 	}
 
-	private shortdecDao shortdecDao;
+
 	
 	@SuppressWarnings("unchecked")
 	public String adminShortdec() throws Exception{
@@ -31,5 +42,24 @@ public class shortdec extends ActionSupport {
 			return SUCCESS;
 		}
 		return "login";
+	}
+	
+	//±à¼­¼ò½é
+	public String editShortdec() throws Exception{
+		Map session=ActionContext.getContext().getSession();
+		User user=(User)session.get("user");
+		if(user != null){
+			return SUCCESS;
+		}
+		return "login";
+	}
+	
+	//±£´æ¼ò½é
+	public String saveShortdec() throws Exception{
+		// TODO Auto-generated constructor stub
+		shortdec.setId(0);
+		this.shortdecDao.save(shortdec);
+		
+		return SUCCESS;
 	}
 }

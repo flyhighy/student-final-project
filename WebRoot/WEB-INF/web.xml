@@ -11,11 +11,18 @@
     <param-value>classpath:applicationContext.xml</param-value>
   </context-param>
   
+
+
+<!-- <filter> 
+	<filter-name>struts2</filter-name>
+	 <filter-class>org.apache.struts2.dispatcher.FilterDispatcher</filter-class> 
+</filter>  -->s
+
   <filter>
  <filter-name>struts2</filter-name>
- <filter-class>
-upload.uploadfilter
- </filter-class>
+	 <filter-class>
+		upload.uploadfilter
+	 </filter-class>
 </filter>
 
 <filter-mapping>
