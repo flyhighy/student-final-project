@@ -17,6 +17,7 @@ String htmlData = request.getParameter("content1") != null ? request.getParamete
 	<script>
 		KindEditor.ready(function(K) {
 			 editor1 = K.create('textarea[name="content1"]', {
+				items : [ 'undo', 'redo', '|', 'insertfile'],
 				cssPath : 'kindeditor/plugins/code/prettify.css',
 				uploadJson : 'kindeditor/jsp/upload_json.jsp',
 				fileManagerJson : 'kindeditor/jsp/file_manager_json.jsp',
@@ -41,7 +42,7 @@ String htmlData = request.getParameter("content1") != null ? request.getParamete
 <body>
 	<%=htmlData%>
 	<form name="example" method="post" action="demo.jsp">
-		<textarea name="content1" cols="100" rows="8" style="width:700px;height:500px;visibility:hidden;"><%=htmlspecialchars(htmlData)%></textarea>
+		<textarea name="content1" cols="100" rows="8" style="width:700px;height:500px;visibility:hidden;" items=['advtable']><%=htmlspecialchars(htmlData)%></textarea>
 		<br />
 		<input type="submit" name="button" value="提交内容" /> (提交快捷键: Ctrl + Enter)
 	</form>

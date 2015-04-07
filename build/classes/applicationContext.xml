@@ -33,6 +33,7 @@
 			<value>com/project/bean/User.hbm.xml</value>
 			<value>com/project/bean/Shortdec.hbm.xml</value>
 			<value>com/project/bean/Competition.hbm.xml</value>
+			<value>com/project/bean/Team.hbm.xml</value>
 	   </list>
 	</property>
     </bean>
@@ -74,6 +75,18 @@
 	</bean>
 	
 	<bean id="userDao" class="com.project.DaoImpl.userDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="teamDao" class="com.project.DaoImpl.teamDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="downloadDao" class="com.project.DaoImpl.downloadDaoImpl">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
@@ -284,4 +297,80 @@
 	<bean id="delManyUser" class="com.project.admin.userManage" scope="prototype">
 		<property name="userDao" ref="userDao"></property>
 	</bean>
+	
+	<!-- *********************************管理员处理指导团队业务块**************************************** -->
+	
+	<!-- 浏览指导团队的业务 -->
+	<bean id="adminTeam" class="com.project.admin.team" scope="prototype">
+		<property name="teamDao" ref="teamDao"></property>
+	</bean>
+	
+	<!-- 增加指导团队的业务 -->
+	<bean id="addTeam" class="com.project.admin.team" scope="prototype">
+		<property name="teamDao" ref="teamDao"></property>
+	</bean>
+	
+	<!-- 保存指导团队的业务 -->
+	<bean id="saveTeam" class="com.project.admin.team" scope="prototype">
+		<property name="teamDao" ref="teamDao"></property>
+	</bean>
+	
+	<!-- 删除指导团队的业务 -->
+	<bean id="delTeam" class="com.project.admin.team" scope="prototype">
+		<property name="teamDao" ref="teamDao"></property>
+	</bean>
+	
+	<!-- 批量删除指导团队的业务 -->
+	<bean id="delManyTeam" class="com.project.admin.team" scope="prototype">
+		<property name="teamDao" ref="teamDao"></property>
+	</bean>
+	
+	<!-- 编辑指导团队的业务 -->
+	<bean id="editTeam" class="com.project.admin.team" scope="prototype">
+		<property name="teamDao" ref="teamDao"></property>
+	</bean>
+	
+	<!-- 更新指导团队的业务 -->
+	<bean id="updateTeam" class="com.project.admin.team" scope="prototype">
+		<property name="teamDao" ref="teamDao"></property>
+	</bean>
+	
+	<!-- *********************************管理员处理下载专区业务块**************************************** -->
+	
+	<!-- 浏览下载专区的业务 -->
+	<bean id="adminDownload" class="com.project.admin.download" scope="prototype">
+		<property name="downloadDao" ref="downloadDao"></property>
+	</bean>
+	
+	<!-- 增加下载的业务 -->
+	<bean id="addDownload" class="com.project.admin.download" scope="prototype">
+		<property name="downloadDao" ref="downloadDao"></property>
+	</bean>
+	
+	<!-- 保存下载的业务 -->
+	<bean id="saveDownload" class="com.project.admin.download" scope="prototype">
+		<property name="downloadDao" ref="downloadDao"></property>
+	</bean>
+	
+	<!-- 删除下载的业务 -->
+	<bean id="delDownload" class="com.project.admin.download" scope="prototype">
+		<property name="downloadDao" ref="downloadDao"></property>
+	</bean>
+	
+	<!-- 批量删除下载的业务 -->
+	<bean id="delManyDownload" class="com.project.admin.download" scope="prototype">
+		<property name="downloadDao" ref="downloadDao"></property>
+	</bean>
+	
+	<!-- 编辑下载的业务 -->
+	<bean id="editDownload" class="com.project.admin.download" scope="prototype">
+		<property name="downloadDao" ref="downloadDao"></property>
+	</bean>
+	
+	<!-- 更新下载的业务 -->
+	<bean id="updateDownload" class="com.project.admin.download" scope="prototype">
+		<property name="downloadDao" ref="downloadDao"></property>
+	</bean>
+	
+	
 </beans>

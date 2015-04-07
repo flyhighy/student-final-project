@@ -3,30 +3,30 @@ package com.project.bean;
 import java.util.Date;
 
 /**
- * Download entity. @author MyEclipse Persistence Tools
+ * Team entity. @author MyEclipse Persistence Tools
  */
 
-public class Download implements java.io.Serializable {
+public class Team implements java.io.Serializable {
 
 	// Fields
 
 	private Integer id;
-	private Integer type;
 	private String name;
-	private String path;
 	private Date time;
+	private String teacher;
+	private String shortdec;
 
 	// Constructors
 
 	/** default constructor */
-	public Download() {
+	public Team() {
 	}
 
 	/** full constructor */
-	public Download(Integer type, String name, String path,Date time) {
-		this.type = type;
+	public Team(String name, String teacher, String shortdec,Date time) {
 		this.name = name;
-		this.path = path;
+		this.teacher = teacher;
+		this.shortdec = shortdec;
 		this.time = time;
 	}
 
@@ -40,14 +40,6 @@ public class Download implements java.io.Serializable {
 		this.id = id;
 	}
 
-	public Integer getType() {
-		return this.type;
-	}
-
-	public void setType(Integer type) {
-		this.type = type;
-	}
-
 	public String getName() {
 		return this.name;
 	}
@@ -56,12 +48,20 @@ public class Download implements java.io.Serializable {
 		this.name = name;
 	}
 
-	public String getPath() {
-		return this.path;
+	public String getTeacher() {
+		return this.teacher;
 	}
 
-	public void setPath(String path) {
-		this.path = path;
+	public void setTeacher(String teacher) {
+		this.teacher = teacher;
+	}
+
+	public String getShortdec() {
+		return this.shortdec;
+	}
+
+	public void setShortdec(String shortdec) {
+		this.shortdec = shortdec;
 	}
 
 	public Date getTime() {

@@ -43,27 +43,18 @@
 		body.delegate("click",".del-many",function(){
 			document.getElementById("delMany").submit();
 		});
-	});
-	
-	
+	})
 </script>
 
 <style>
-	.user-item{
+	.file-path{
 		display:inline-block;
-		width:100px;
-		text-align:center;
+		width:600px;
 	}
 	
-	.user-name{
+	.head-title{
 		display:inline-block;
-		width:50px;
-		text-align:center;
-	}
-	
-	.errorMessage{
-		color:red;
-		font-size:14px;
+		width:600px;
 	}
 </style>
 </head>
@@ -72,7 +63,7 @@
 	<div class="other">
 			<input type="text" placeholder="输入关键字">
 			<input class="search" type="button" value="搜索">
-			<input type="button" value="添加成员" onclick="window.location='addUser'">
+			<input type="button" value="添加文件" onclick="window.location='addDownload'">
 			<input type="button" class="checkedmore" value="批量操作">
 		</div>
 	<div class="content-wrapper">
@@ -81,31 +72,21 @@
 	    	<input class="check-all" type="checkbox"><span>全选</span>
 	    	<a href="javascript:void(0)" class="del-many">全部删除</a>
 	    	</div>
-	    	<s:fielderror fieldName="error" />
-	    	<form id="delMany" action="delManyUser" method="post">
+	    	<form id="delMany" action="delManyDownload" method="post">
 	    	<div class="head">
 	    		<span class="head-choose">选择</span>
-	    		<span class="user-name">姓名</span>
-	    		<span class="user-item">用户名</span>
-	    		<span class="user-item">密码</span>
-	    		<span class="user-item">加入时间</span>
-	    		<span class="user-item">成员类型 </span>
-<%-- 	    		<span class="head-author">录入人员</span> --%>
+	    		<span class="head-title">文件名 </span>
+	    		<span class="head-time">上传时间</span>
+	    		<span class="head-author">文件分类</span>
 	    		<span class="head-op">操作</span>
 	    	</div>
 	    	<s:iterator value="#request.list" id="ut">
 	    	<p class="news-item">
 	    		<span  class="choose"><input name="checkOption" class="choose-box" type="checkbox" value="<s:property value='#ut.id'/>"></span>
-	    		<a class="user-name" href="userDetail?user.id=<s:property value="#ut.id"/>"><s:property value="#ut.name"/></a> 
-	    		<span class="user-username user-item"><s:property value="#ut.username"/></span>
-	    		<span class="user-password user-item"><s:property value="#ut.password"/></span>
-	    		<span class="user-time user-item"><s:date name='%{#ut.time}' format='yyyy-MM-dd'/></span>
-	    		<span class="user-type user-item"><s:property value="%{#ut.type==0?'超级管理员':(#ut.type==1?'管理员':'普通成员')}"/></span>
-	    		<span class="operator"><s:a href="editUser?user.id=%{#ut.id}">编辑</s:a>
-	    		|
-	    		<s:a href="delUser?user.id=%{#ut.id}">删除</s:a></span>
-	    		
-	    	<%-- 	<span class="author"><s:property value="#ut.author"/></span> --%>
+	    		<span class="file-path"><s:property value="#ut.path" escape="false"/></span>
+	    		<span class="operator"><s:a href="editDownload?download.id=%{#ut.id}">编辑</s:a>|<s:a href="delDownload?download.id=%{#ut.id}">删除</s:a></span>
+	    		<span class="time"><s:date name='%{#ut.time}' format='yyyy-MM-dd'/></span>
+	    		<span class="author"><s:property value="%{#ut.type==0?'规章制度':'学习资料'}"/></span>
 	    	</p>
 	    	</s:iterator>
 	</form>
