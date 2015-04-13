@@ -49,10 +49,12 @@
 <body>
 <iframe src="files/pages/admin-header.jsp" marginheight="0" hidefocus="true" frameborder="0" scrolling="no" allowtransparency="yes" seamless  tabindex="" style="width: 100%; height:181px;;"></iframe>
 	<div class="other">
-			<input type="text" placeholder="输入关键字">
-			<input class="search" type="button" value="搜索">
+		<form action="searchMessage" method="post">
+			<input type="text" name="searchOption" placeholder="输入关键字"> <input
+				class="search" type="submit" value="搜索">
 			<input type="button" value="发布通知" onclick="window.location='createMessage'">
 			<input type="button" class="checkedmore" value="批量操作">
+		</form>
 		</div>
 	<div class="content-wrapper">
 	    <div class="news-list">
@@ -68,6 +70,7 @@
 	    		<span class="head-author">作者</span>
 	    		<span class="head-op">操作</span>
 	    	</div>
+	    	<s:fielderror fieldName="error" />
 	    	<s:iterator value="#request.list" id="ut">
 	    	<p class="news-item">
 	    		<span  class="choose"><input name="checkOption" class="choose-box" type="checkbox" value="<s:property value='#ut.id'/>"></span>

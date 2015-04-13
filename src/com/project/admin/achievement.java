@@ -14,7 +14,7 @@ public class achievement extends ActionSupport {
 	
 	private achievementDao achievementDao;
 	private Achievement achievement;
-	List<Integer> checkOption;
+	private List<Integer> checkOption;
 	
 
 
@@ -52,6 +52,9 @@ public class achievement extends ActionSupport {
 	//‰Ø¿¿»Ÿ”˛
 	@SuppressWarnings("unchecked")
 	public String adminAchievement() throws Exception{
+		
+		Map session=ActionContext.getContext().getSession();
+		session.put("nowNav", "6");
 		
 		List<Achievement> list = this.achievementDao.findAll();
 		Map request = (Map) ActionContext.getContext().get("request");

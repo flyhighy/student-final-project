@@ -10,4 +10,5 @@ public interface announcementDao {
 	public Announcement findMessage(int id);
 	public void updateAnnouncement(Announcement announcement);
 	public List<Announcement> fildAll();
+	public List<Announcement> searchByHql(String hql);
 }

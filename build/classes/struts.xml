@@ -19,6 +19,10 @@
 			<result name="input">/files/pages/login.jsp</result>
 		</action>
 		
+		<!-- 获取页面信息 -->
+		<action name="getPageMsg" class="com.project.admin.userManage" method="getPageMsg">
+		</action>
+		
 		<!-- *********************************管理员处理基地介绍**************************************** -->
 		
 		<!--管理员基地介绍-->
@@ -50,6 +54,10 @@
 		<action name="adminNews" class="adminNews" method="adminNews">
 			<result name="success">/files/pages/admin-news.jsp</result>
 			<result name="login"  type="redirectAction">login</result>
+		</action>
+		
+		<!--管理员浏览资讯分页功能-->
+		<action name="newsPages" class="newsPages" method="newsPages">
 		</action>
 		
 		<!--管理员添加资讯-->
@@ -92,6 +100,10 @@
 		<action name="delMany" class="delMany" method="delMany">
 			<result name="success" type="redirectAction">adminNews</result>
 			<result name="login"  type="redirectAction">login</result>
+		</action>
+		
+		<!--管理员查询资讯-->
+		<action name="searchNews" class="searchNews" method="searchNews">
 		</action>
 		
 		<!-- *********************************管理员处理通知**************************************** -->
@@ -142,6 +154,12 @@
 		<!--管理员批量删除通知-->
 		<action name="delManyMsg" class="delManyMsg" method="delManyMsg">
 			<result name="success" type="redirectAction">adminMessage</result>
+			<result name="login"  type="redirectAction">login</result>
+		</action>
+		
+		<!--管理员查找通知-->
+		<action name="searchMessage" class="searchMessage" method="searchMessage">
+			<result name="success">/files/pages/admin-messages.jsp</result>
 			<result name="login"  type="redirectAction">login</result>
 		</action>
 		

@@ -123,6 +123,11 @@
 		<property name="newsDao" ref="newsDao"></property>
 	</bean>
 	
+	<!-- 管理员浏览资讯分页的业务 -->
+	<bean id="newsPages" class="com.project.admin.news" scope="prototype">
+		<property name="newsDao" ref="newsDao"></property>
+	</bean>
+	
 	<!-- 添加资讯的业务 -->
 	<bean id="createNews" class="com.project.admin.news" scope="prototype">
 	</bean>
@@ -154,6 +159,11 @@
 	
 	<!-- 批量删除资讯的业务 -->
 	<bean id="delMany" class="com.project.admin.news" scope="prototype">
+		<property name="newsDao" ref="newsDao"></property>
+	</bean>
+	
+	<!-- 查询资讯的业务 -->
+	<bean id="searchNews" class="com.project.admin.news" scope="prototype">
 		<property name="newsDao" ref="newsDao"></property>
 	</bean>
 	
@@ -191,6 +201,11 @@
 	
 	<!-- 批量删除通知的业务 -->
 	<bean id="delManyMsg" class="com.project.admin.message" scope="prototype">
+		<property name="announcementDao" ref="announcementDao"></property>
+	</bean>
+	
+	<!-- 查找通知的业务 -->
+	<bean id="searchMessage" class="com.project.admin.message" scope="prototype">
 		<property name="announcementDao" ref="announcementDao"></property>
 	</bean>
 	

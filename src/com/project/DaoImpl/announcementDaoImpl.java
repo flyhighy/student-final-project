@@ -43,5 +43,14 @@ public class announcementDaoImpl extends HibernateDaoSupport implements announce
 	public void updateAnnouncement(Announcement announcement){
 		this.getHibernateTemplate().update(announcement);
 	}
+	
+	public List<Announcement> searchByHql(String hql){
+		List<Announcement> list = this.getHibernateTemplate().find(hql);
+		if(list.size()>0){
+			return list;
+		}else{
+			return null;
+		}
+	}
 
 }

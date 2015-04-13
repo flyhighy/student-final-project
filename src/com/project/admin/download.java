@@ -36,6 +36,9 @@ public class download extends ActionSupport {
 	}
 	
 	public String adminDownload() throws Exception{
+		Map session=ActionContext.getContext().getSession();
+		session.put("nowNav", "8");
+		
 		List<Download> list = this.downloadDao.findAll();
 		Map request = (Map) ActionContext.getContext().get("request");
 		request.put("list", list);

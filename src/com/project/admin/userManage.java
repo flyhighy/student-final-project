@@ -1,8 +1,18 @@
 package com.project.admin;
 
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+
+import org.apache.struts2.ServletActionContext;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
@@ -39,6 +49,9 @@ public class userManage extends ActionSupport {
 	}
 
 	public String adminUser() throws Exception {
+		Map session=ActionContext.getContext().getSession();
+		session.put("nowNav", "7");
+		
 		List<User> list = this.userDao.findAll();
 		Map request = (Map) ActionContext.getContext().get("request");
 		request.put("list", list);
@@ -99,6 +112,29 @@ public class userManage extends ActionSupport {
 			this.userDao.delUserById(checkOption.get(i));
 		}
 		return SUCCESS;
+	}
+	
+	public void getPageMsg() throws Exception {
+	
+		HttpServletRequest request = ServletActionContext.getRequest();
+		HttpServletResponse response = ServletActionContext.getResponse();
+		try {
+			request.setCharacterEncoding("utf-8");
+			response.setCharacterEncoding("utf-8"); 
+		} catch (UnsupportedEncodingException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}		
+		PrintWriter out = response.getWriter();
+		Map session = ActionContext.getContext().getSession();
+		String nowNav = (String) session.get("nowNav");
+		User user = (User) session.get("user");
+		
+		JSONObject item = JSONObject.fromObject(user);
+		JSONArray json = new JSONArray();   
+		json.add(user);
+		json.add(nowNav);
+		out.println(json);
 	}
 
 }

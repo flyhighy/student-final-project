@@ -10,4 +10,5 @@ public interface newsDao {
 	public void delNews(int id);
 	public void updateNews(News news);
 	public News findNews(int id);
+	public List<News> searchByHql(String hql);
 }

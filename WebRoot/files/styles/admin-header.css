@@ -60,3 +60,14 @@ body{
 .nav a.active{
     color: #000;
 }
+
+.nav .user-operation{
+	float:right;
+}
+
+.nav .user-operation a{
+	line-height:29px;
+	text-decoration:none;
+	font-size:14px;
+	color:yellow;
+}

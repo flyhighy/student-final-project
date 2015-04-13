@@ -35,6 +35,7 @@ public class shortdec extends ActionSupport {
 	public String adminShortdec() throws Exception{
 		Map session=ActionContext.getContext().getSession();
 		User user=(User)session.get("user");
+		session.put("nowNav", "1");
 		if(user != null){
 			Shortdec shortdec = this.shortdecDao.getShortdec();
 			Map request = (Map) ActionContext.getContext().get("request");

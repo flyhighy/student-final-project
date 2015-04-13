@@ -51,6 +51,8 @@ public class team extends ActionSupport {
 	//浏览指导团队
 	@SuppressWarnings("unchecked")
 	public String adminTeam() throws Exception{
+		Map session=ActionContext.getContext().getSession();
+		session.put("nowNav", "4");
 		
 		List<Team> list = this.teamDao.findAll();
 		Map request = (Map) ActionContext.getContext().get("request");

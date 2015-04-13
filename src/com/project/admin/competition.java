@@ -48,7 +48,8 @@ public class competition extends ActionSupport {
 	//浏览参赛经历
 	@SuppressWarnings("unchecked")
 	public String adminCompetition() throws Exception{
-		
+		Map session=ActionContext.getContext().getSession();
+		session.put("nowNav", "5");
 		List<Competition> list = this.competitionDao.findAll();
 		Map request = (Map) ActionContext.getContext().get("request");
 		request.put("list", list);

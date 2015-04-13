@@ -23,12 +23,14 @@ p{
         }
         
         .news-item{
-        	padding-bottom:5px;
+        	padding-bottom:10px;
+        	border-bottom:dotted 1px #ccc;
         }
         
         .news-title{
         	width:500px;
         	display:inline-block;
+        	overflow: hidden;
         }
         
         .operator{
@@ -53,31 +55,37 @@ p{
         	margin-bottom:10px;
         	padding:5px 0;
         	border-bottom:#ccc solid 1px;
+        	overflow: hidden;
         }
         .head-choose{
         	display:none;
         	width:50px;
+        	overflow: hidden;
         }
        .head-title{
        		width:500px;
        		display:inline-block;
+       		overflow: hidden;
        }
        
         .head-time{
         	text-align:center;
        		width:150px;
        		display:inline-block;
+       		 overflow: hidden;
        }
        
        .head-num{
        		text-align:center;
        		width:70px;
        		display:inline-block;
+       		overflow: hidden;
        }
         .head-author{
         	text-align:center;
        		width:60px;
        		display:inline-block;
+       		 overflow: hidden;
        }
        
        .head-op{
@@ -129,5 +137,25 @@ p{
       
       .news-list{
       		font-size:15px;
+      }
+      
+      .pages{
+      	text-align:center;
+      	padding-top:5px;
+      }
+      
+      .pages a{
+      	  border: 1px solid #9aafe5;
+		  color: #2e6ab1;
+		  margin: 0 2px;
+		  padding: 2px 5px;
+		  text-decoration: none;
+		  font-size:12px;
+      }
+      
+      .pages .highlight{
+     	 background-color: #2e6ab1;
+ 		 border: 1px solid navy;
+ 		 color:#fff;
       }
   

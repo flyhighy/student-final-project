@@ -14,8 +14,18 @@ public class message extends ActionSupport {
 	
 	private Announcement announcement;
 	private announcementDao announcementDao;
-	List<Integer>  checkOption;
+	private List<Integer>  checkOption;
+	private String searchOption;
 	
+	
+
+	public String getSearchOption() {
+		return searchOption;
+	}
+
+	public void setSearchOption(String searchOption) {
+		this.searchOption = searchOption;
+	}
 
 	public List<Integer> getCheckOption() {
 		return checkOption;
@@ -46,6 +56,7 @@ public class message extends ActionSupport {
 	public String adminMessage() throws Exception{
 		Map session=ActionContext.getContext().getSession();
 		User user=(User)session.get("user");
+		session.put("nowNav", "3");
 		if(user != null){
 			List<Announcement> list=this.announcementDao.fildAll();
 			Map request = (Map) ActionContext.getContext().get("request");
@@ -109,6 +120,23 @@ public class message extends ActionSupport {
 		for(int i = 0;i < checkOption.size();i++ ){
 			this.announcementDao.delMessage(checkOption.get(i));
 		}
+		return SUCCESS;
+	}
+	
+	//搜索公告
+	public String searchMessage() throws Exception{
+		String hql = "from Announcement announcement where announcement.title like"+
+				"'%"
+				+ searchOption
+				+ "%'";
+		List<Announcement> list=this.announcementDao.searchByHql(hql);
+		if(list != null){
+			Map request = (Map) ActionContext.getContext().get("request");
+			request.put("list", list);
+		}else{
+			this.addFieldError("error", "抱歉，没有找到您搜索的相关内容。");
+		}
+
 		return SUCCESS;
 	}
 }

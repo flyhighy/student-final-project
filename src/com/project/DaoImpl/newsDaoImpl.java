@@ -26,7 +26,7 @@ public class newsDaoImpl extends HibernateDaoSupport implements newsDao {
 		if(list.size()<20){
 			return list;
 		}else{
-			return list.subList(0, 20);
+			return list;
 		}
 				
 	}
@@ -43,6 +43,15 @@ public class newsDaoImpl extends HibernateDaoSupport implements newsDao {
 	
 	public void updateNews(News news){
 		this.getHibernateTemplate().update(news);
+	}
+	
+	public List<News> searchByHql(String hql){
+		List<News> list = this.getHibernateTemplate().find(hql);
+		if(list.size()>0){
+			return list;
+		}else{
+			return null;
+		}
 	}
 
 }
