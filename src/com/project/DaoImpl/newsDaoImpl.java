@@ -20,7 +20,19 @@ public class newsDaoImpl extends HibernateDaoSupport implements newsDao {
 	}
 	
 	public List<News> findAll(){
-		String hql = "from News news";
+		String hql = "from News news order by news.time desc";
+		@SuppressWarnings("unchecked")
+		List<News> list = this.getHibernateTemplate().find(hql);
+		if(list.size()<20){
+			return list;
+		}else{
+			return list;
+		}
+				
+	}
+	
+	public List<News> getAll(){
+		String hql = "from News news order by news.time asc";
 		@SuppressWarnings("unchecked")
 		List<News> list = this.getHibernateTemplate().find(hql);
 		if(list.size()<20){

@@ -8,7 +8,10 @@
   </listener>
   <context-param>
     <param-name>contextConfigLocation</param-name>
-    <param-value>classpath:applicationContext.xml</param-value>
+    <param-value>
+    	classpath:applicationContext.xml,
+    	classpath:applicationContext-user.xml
+    </param-value>
   </context-param>
   
 
@@ -16,7 +19,7 @@
 <!-- <filter> 
 	<filter-name>struts2</filter-name>
 	 <filter-class>org.apache.struts2.dispatcher.FilterDispatcher</filter-class> 
-</filter>  -->s
+</filter>  -->
 
   <filter>
  <filter-name>struts2</filter-name>

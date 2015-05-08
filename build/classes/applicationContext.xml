@@ -34,6 +34,7 @@
 			<value>com/project/bean/Shortdec.hbm.xml</value>
 			<value>com/project/bean/Competition.hbm.xml</value>
 			<value>com/project/bean/Team.hbm.xml</value>
+			<value>com/project/bean/Headnews.hbm.xml</value>
 	   </list>
 	</property>
     </bean>
@@ -87,6 +88,12 @@
 	</bean>
 	
 	<bean id="downloadDao" class="com.project.DaoImpl.downloadDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="headnewsDao" class="com.project.DaoImpl.headnewsDaoImpl">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
@@ -385,6 +392,39 @@
 	<!-- 更新下载的业务 -->
 	<bean id="updateDownload" class="com.project.admin.download" scope="prototype">
 		<property name="downloadDao" ref="downloadDao"></property>
+	</bean>
+	
+	<!-- *********************************管理员处理头条信息业务块**************************************** -->
+	
+	<!-- 浏览头条信息的业务 -->
+	<bean id="adminHeadnews" class="com.project.admin.headNews" scope="prototype">
+		<property name="headnewsDao" ref="headnewsDao"></property>
+	</bean>
+	
+	<!-- 增加头条信息的业务 -->
+	<bean id="createHeadnews" class="com.project.admin.headNews" scope="prototype">
+		<property name="headnewsDao" ref="headnewsDao"></property>
+	</bean>
+	
+	<!-- 保存头条信息的业务 -->
+	<bean id="saveHeadnews" class="com.project.admin.headNews" scope="prototype">
+		<property name="headnewsDao" ref="headnewsDao"></property>
+	</bean>
+	
+	<!-- 编辑头条信息的业务 -->
+	<bean id="editHeadnews" class="com.project.admin.headNews" scope="prototype">
+		<property name="headnewsDao" ref="headnewsDao"></property>
+	</bean>
+	
+	
+	<!-- 更新头条信息的业务 -->
+	<bean id="updateHeadnews" class="com.project.admin.headNews" scope="prototype">
+		<property name="headnewsDao" ref="headnewsDao"></property>
+	</bean>
+	
+	<!-- 删除头条信息的业务 -->
+	<bean id="delHeadnews" class="com.project.admin.headNews" scope="prototype">
+		<property name="headnewsDao" ref="headnewsDao"></property>
 	</bean>
 	
 	

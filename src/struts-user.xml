@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+	"http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<!-- 指定Struts 2配置文件的根元素 -->
+<struts>
+
+	<constant name="struts.multipart.saveDir" value="/tmp"></constant>
+
+	<package name="struts-user" extends="struts-default">
+		
+		<action name="getHeadnews" class="getHeadnews" method="getheadNews">
+		
+		</action>
+		
+		<action name="getAnnouncement" class="getAnnouncement" method="getAnnouncement">
+		
+		</action>
+		
+		<action name="gethotNews" class="gethotNews" method="gethotNews">
+		
+		</action>
+		
+		<action name="index" class="com.project.userAction.pageAction" method="getPage">
+			<result name="success">/files/user-page/index.html</result>
+		</action>
+		
+		<action name="getDownload" class="getDownload" method="getDownload">
+		
+		</action>
+		
+		<action name="userNewsDetail" class="userNewsDetail" method="userNewsDetail">
+		
+		</action>
+		
+		<action name="userAnnouncementDetail" class="userAnnouncementDetail" method="userAnnouncementDetail">
+		
+		</action>
+
+	</package>
+</struts>

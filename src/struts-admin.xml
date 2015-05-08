@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+	"http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<!-- 指定Struts 2配置文件的根元素 -->
+<struts>
+	
+	
+
+	<constant name="struts.multipart.saveDir" value="/tmp"></constant>
+	<package name="struts" extends="struts-default">
+		<!-- 登录界面 -->
+		<action name="login">
+			<result>/files/pages/login.jsp</result>
+		</action>
+		
+		<!-- 确认登录 -->
+		<action name="loginTo" class="loginTo" method="login">
+			<result name="success"  type="redirectAction">adminShortdec</result>
+			<result name="input">/files/pages/login.jsp</result>
+		</action>
+		
+		<!-- 获取页面信息 -->
+		<action name="getPageMsg" class="com.project.admin.userManage" method="getPageMsg">
+		</action>
+		
+		<!-- *********************************管理员处理基地介绍**************************************** -->
+		
+		<!--管理员基地介绍-->
+		<action name="adminShortdec" class="adminShortdec" method="adminShortdec">
+			<result name="success">/files/pages/admin-shortdec.jsp</result>
+			<result name="login"  type="redirectAction">login</result>
+		</action>
+		
+		<!--获取基地介绍-->
+		<action name="getShortdec" class="getShortdec" method="getShortdec">
+		</action>
+		
+		<!--管理员编辑基地介绍-->
+		<action name="editShortdec" class="com.project.admin.shortdec" method="editShortdec">
+			<result name="success">/files/pages/admin-editShortdec.jsp</result>
+			<result name="login"  type="redirectAction">login</result>
+		</action>
+		
+		<!--管理员保存基地介绍-->
+		<action name="saveShortdec" class="saveShortdec" method="saveShortdec">
+			<result name="success" type="redirectAction">adminShortdec</result>
+			<result name="login"  type="redirectAction">login</result>
+		</action>
+		
+		
+		<!-- *********************************管理员处理资讯**************************************** -->
+		
+		<!--管理员浏览资讯-->
+		<action name="adminNews" class="adminNews" method="adminNews">
+			<result name="success">/files/pages/admin-news.jsp</result>
+			<result name="login"  type="redirectAction">login</result>
+		</action>
+		
+		<!--管理员浏览资讯分页功能-->
+		<action name="newsPages" class="newsPages" method="newsPages">
+		</action>
+		
+		<!--管理员添加资讯-->
+		<action name="createNews" class="createNews" method="createNews">
+			<result name="success">/files/pages/admin-createNews.jsp</result>
+			<result name="login"  type="redirectAction">login</result>
+		</action>
+		
+		<!--管理员保存资讯-->
+		<action name="saveNews" class="saveNews" method="saveNews">
+			<result name="success" type="redirectAction">adminNews</result>
+			<result name="login"  type="redirectAction">login</result>
+		</action>
+		
+		<!--管理员删除资讯-->
+		<action name="delNews" class="delNews" method="delNews">
+			<result name="success" type="redirectAction">adminNews</result>
+			<result name="login"  type="redirectAction">login</result>
+		</action>
+		
+		<!--管理员编辑资讯-->
+		<action name="editNews" class="editNews" method="editNews">
+			<result name="success">/files/pages/admin-editNews.jsp</result>
+			<result name="login"  type="redirectAction">login</result>
+		</action>
+		
+		<!--管理员更新资讯-->
+		<action name="updateNews" class="updateNews" method="updateNews">
+			<result name="success" type="redirectAction">adminNews</result>
+			<result name="login"  type="redirectAction">login</result>
+		</action>
+		
+		<!--管理员查看资讯-->
+		<action name="newsDetail" class="newsDetail" method="newsDetail">
+			<result name="success">/files/pages/admin-newsDetail.jsp</result>
+			<result name="login"  type="redirectAction">login</result>
+		</action>
+		
+		<!--管理员批量删除资讯-->
+		<action name="delMany" class="delMany" method="delMany">
+			<result name="success" type="redirectAction">adminNews</result>
+			<result name="login"  type="redirectAction">login</result>
+		</action>
+		
+		<!--管理员查询资讯-->
+		<action name="searchNews" class="searchNews" method="searchNews">
+		</action>
+		
+		<!-- *********************************管理员处理通知**************************************** -->
+		
+		<!--管理员浏览通知-->
+		<action name="adminMessage" class="adminMessage" method="adminMessage">
+			<result name="success">/files/pages/admin-messages.jsp</result>
+			<result name="login"  type="redirectAction">login</result>
+		</action>
+		
+		<!--管理员发布通知-->
+		<action name="createMessage" class="com.project.admin.message" method="createMessage">
+			<result name="success">/files/pages/admin-createMessage.jsp</result>
+			<result name="input">/files/pages/admin-createMessage.jsp</result>
+			<result name="login"  type="redirectAction">login</result>
+		</action>
+		
+		<!--管理员保存通知-->
+		<action name="saveMessage" class="saveMessage" method="saveMessage">
+			<result name="success" type="redirectAction">adminMessage</result>
+			<result name="login"  type="redirectAction">login</result>
+		</action>
+		
+		<!--管理员删除通知-->
+		<action name="delMessage" class="delMessage" method="delMessage">
+			<result name="success" type="redirectAction">adminMessage</result>
+			<result name="login"  type="redirectAction">login</result>
+		</action>
+		
+		<!--管理员编辑通知-->
+		<action name="editMessage" class="editMessage" method="editMessage">
+			<result name="success">/files/pages/admin-editMessage.jsp</result>
+			<result name="login"  type="redirectAction">login</result>
+		</action>
+		
+		<!--管理员更新通知-->
+		<action name="updateMessage" class="updateMessage" method="updateMessage">
+			<result name="success" type="redirectAction">adminMessage</result>
+			<result name="login"  type="redirectAction">login</result>
+		</action>
+		
+		<!--管理员查看通知-->
+		<action name="messageDetail" class="messageDetail" method="messageDetail">
+			<result name="success">/files/pages/admin-messageDetail.jsp</result>
+			<result name="login"  type="redirectAction">login</result>
+		</action>
+		
+		<!--管理员批量删除通知-->
+		<action name="delManyMsg" class="delManyMsg" method="delManyMsg">
+			<result name="success" type="redirectAction">adminMessage</result>
+			<result name="login"  type="redirectAction">login</result>
+		</action>
+		
+		<!--管理员查找通知-->
+		<action name="searchMessage" class="searchMessage" method="searchMessage">
+			<result name="success">/files/pages/admin-messages.jsp</result>
+			<result name="login"  type="redirectAction">login</result>
+		</action>
+		
+		<!-- *********************************管理员处理参赛经历**************************************** -->
+		
+		<!--管理员浏览参赛经历-->
+		<action name="adminCompetition" class="adminCompetition" method="adminCompetition">
+			<result name="success">/files/pages/admin-competition.jsp</result>
+		</action>
+		
+		<!--管理员增加参赛经历-->
+		<action name="createCompetition" class="createCompetition" method="createCompetition">
+			<result name="success">/files/pages/admin-createCompetition.jsp</result>
+		</action>
+		
+		<!--管理员保存参赛经历-->
+		<action name="saveCompetition" class="saveCompetition" method="saveCompetition">
+				<result name="success" type="redirectAction">adminCompetition</result>
+		</action>
+		
+		<!--管理员删除参赛经历-->
+		<action name="delCompetition" class="delCompetition" method="delCompetition">
+				<result name="success" type="redirectAction">adminCompetition</result>
+		</action>
+		
+		<!--管理员批量删除参赛经历-->
+		<action name="delManyCompetition" class="delManyCompetition" method="delManyCompetition">
+				<result name="success" type="redirectAction">adminCompetition</result>
+		</action>
+		
+		<!--管理员编辑参赛经历-->
+		<action name="editCompetition" class="editCompetition" method="editCompetition">
+				<result name="success">/files/pages/admin-editCompetition.jsp</result>
+		</action>
+		
+		<!--管理员更新参赛经历-->
+		<action name="updateCompetition" class="updateCompetition" method="updateCompetition">
+				<result name="success" type="redirectAction">adminCompetition</result>
+		</action>
+		
+		<!-- *********************************管理员处理荣誉成果**************************************** -->
+		
+		<!--管理员浏览荣誉成果-->
+		<action name="adminAchievement" class="adminAchievement" method="adminAchievement">
+			<result name="success">/files/pages/admin-achievement.jsp</result>
+		</action>
+		
+		<!--管理员增加荣誉成果-->
+		<action name="createAchievement" class="createAchievement" method="createAchievement">
+			<result name="success">/files/pages/admin-createAchievement.jsp</result>
+		</action>
+		
+		<!--管理员保存荣誉成果-->
+		<action name="saveAchievement" class="saveAchievement" method="saveAchievement">
+				<result name="success" type="redirectAction">adminAchievement</result>
+		</action>
+		
+		<!--管理员删除荣誉成果-->
+		<action name="delAchievement" class="delAchievement" method="delAchievement">
+				<result name="success" type="redirectAction">adminAchievement</result>
+		</action>
+		
+		<!--管理员批量删除荣誉成果-->
+		<action name="delManyAchievement" class="delManyAchievement" method="delManyAchievement">
+				<result name="success" type="redirectAction">adminAchievement</result>
+		</action>
+		
+		<!--管理员编辑荣誉成果-->
+		<action name="editAchievement" class="editAchievement" method="editAchievement">
+				<result name="success">/files/pages/admin-editAchievement.jsp</result>
+		</action>
+		
+		<!--管理员更新荣誉成果-->
+		<action name="updateAchievement" class="updateAchievement" method="updateAchievement">
+				<result name="success" type="redirectAction">adminAchievement</result>
+		</action>
+		
+		<!-- *********************************管理员管理成员**************************************** -->
+		
+		<action name="adminUser" class="adminUser" method="adminUser">
+				<result name="success">/files/pages/admin-users.jsp</result>
+		</action>
+		
+		<action name="addUser" class="addUser" method="addUser">
+				<result name="success">/files/pages/admin-addUser.jsp</result>
+		</action>
+		
+		<action name="saveUser" class="saveUser" method="saveUser">
+				<result name="success" type="redirectAction">adminUser</result>
+				<result name="error" >/files/pages/admin-users.jsp</result>
+		</action>
+		
+		<action name="editUser" class="editUser" method="editUser">
+				<result name="success">/files/pages/admin-editUser.jsp</result>
+				<result name="error" >/files/pages/admin-users.jsp</result>
+		</action>
+		
+		<action name="delUser" class="delUser" method="delUser">
+				<result name="success" type="redirectAction">adminUser</result>
+				<result name="error" >/files/pages/admin-users.jsp</result>
+		</action>
+		
+		<action name="updateUser" class="updateUser" method="updateUser">
+				<result name="success" type="redirectAction">adminUser</result>
+				<result name="error" >/files/pages/admin-editUser.jsp</result>
+		</action>
+		
+		<action name="delManyUser" class="delManyUser" method="delManyUser">
+				<result name="success" type="redirectAction">adminUser</result>
+				<result name="error" >/files/pages/admin-users.jsp</result>
+		</action>
+		
+		<!-- *********************************管理员管理指导团队**************************************** -->
+		
+		<!--管理员浏览指导团队-->
+		<action name="adminTeam" class="adminTeam" method="adminTeam">
+			<result name="success">/files/pages/admin-team.jsp</result>
+		</action>
+		
+		<!--管理员增加指导团队-->
+		<action name="addTeam" class="addTeam" method="addTeam">
+			<result name="success">/files/pages/admin-addTeam.jsp</result>
+		</action>
+		
+		<!--管理员保存指导团队-->
+		<action name="saveTeam" class="saveTeam" method="saveTeam">
+				<result name="success" type="redirectAction">adminTeam</result>
+		</action>
+		
+		<!--管理员删除指导团队-->
+		<action name="delTeam" class="delTeam" method="delTeam">
+				<result name="success" type="redirectAction">adminTeam</result>
+		</action>
+		
+		<!--管理员批量删除指导团队-->
+		<action name="delManyTeam" class="delManyTeam" method="delManyTeam">
+				<result name="success" type="redirectAction">adminTeam</result>
+		</action>
+		
+		<!--管理员编辑指导团队-->
+		<action name="editTeam" class="editTeam" method="editTeam">
+				<result name="success">/files/pages/admin-editTeam.jsp</result>
+		</action>
+		
+		<!--管理员更新指导团队-->
+		<action name="updateTeam" class="updateTeam" method="updateTeam">
+				<result name="success" type="redirectAction">adminTeam</result>
+		</action>
+		
+		<!-- *********************************管理员处理下载专区**************************************** -->
+		
+		<!--管理员浏览下载-->
+		<action name="adminDownload" class="adminDownload" method="adminDownload">
+				<result name="success">/files/pages/admin-download.jsp</result>
+		</action>
+		
+		<!--管理员增加下载-->
+		<action name="addDownload" class="addDownload" method="addDownload">
+			<result name="success">/files/pages/admin-addDownload.jsp</result>
+		</action>
+		
+		<!--管理员保存下载-->
+		<action name="saveDownload" class="saveDownload" method="saveDownload">
+				<result name="success" type="redirectAction">adminDownload</result>
+		</action>
+		
+		<!--管理员删除下载-->
+		<action name="delDownload" class="delDownload" method="delDownload">
+				<result name="success" type="redirectAction">adminDownload</result>
+		</action>
+		
+		<!--管理员批量删除下载-->
+		<action name="delManyDownload" class="delManyDownload" method="delManyDownload">
+				<result name="success" type="redirectAction">adminDownload</result>
+		</action>
+		
+		<!--管理员编辑下载-->
+		<action name="editDownload" class="editDownload" method="editDownload">
+				<result name="success">/files/pages/admin-editDownload.jsp</result>
+		</action>
+		
+		<!--管理员更新下载-->
+		<action name="updateDownload" class="updateDownload" method="updateDownload">
+				<result name="success" type="redirectAction">adminDownload</result>
+		</action>
+		
+		<!-- *********************************管理员处理头条信息**************************************** -->
+		
+		<!--管理员浏览头条-->
+		<action name="adminHeadnews" class="adminHeadnews" method="adminHeadnews">
+				<result name="success">/files/pages/admin-headnews.jsp</result>
+		</action>
+		
+		<!--管理员添加头条-->
+		<action name="createHeadnews" class="createHeadnews" method="createHeadnews">
+				<result name="success">/files/pages/admin-createHeadnews.jsp</result>
+		</action>
+		
+		<!--管理员保存头条-->
+		<action name="saveHeadnews" class="saveHeadnews" method="saveHeadnews">
+				<result name="success" type="redirectAction">adminHeadnews</result>
+		</action>
+		
+		<!--管理员编辑头条-->
+		<action name="editHeadnews" class="editHeadnews" method="editHeadnews">
+				<result name="success">/files/pages/admin-editHeadnews.jsp</result>
+		</action>
+		
+		<!--管理员更新头条-->
+		<action name="updateHeadnews" class="updateHeadnews" method="updateHeadnews">
+				<result name="success" type="redirectAction">adminHeadnews</result>
+		</action>
+		
+
+		<action name="delHeadnews" class="delHeadnews" method="delHeadnews">
+				<result name="success" type="redirectAction">adminHeadnews</result>
+		</action>
+		
+		
+
+	</package>
+</struts>

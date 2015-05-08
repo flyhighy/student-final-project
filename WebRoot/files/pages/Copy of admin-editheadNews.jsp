@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
 <html>
 <head lang="en">
@@ -48,6 +49,10 @@
         	margin-bottom:5px;
         }
         
+        #newscontent{
+        	display:none;
+        }
+        
      
     </style>
     <script>
@@ -62,6 +67,9 @@
 	   		}
 	   	});
 	   	prettyPrint();
+	   	var content=document.getElementById("newscontent");
+	   	editor1.html(content.value);
+	   	content.parentNode.removeChild(content);
 	   });
     </script>
 </head>
@@ -69,21 +77,21 @@
 <iframe src="files/pages/admin-header.jsp" marginheight="0" hidefocus="true" frameborder="0" scrolling="no" allowtransparency="yes" seamless  tabindex="" style="width: 100%; height:181px;;"></iframe>
 <div class="content-wrapper">
 	<div class="content clearfix">
-		<form class="mynews" action="saveNews" method="post">
+		<form class="mynews" action="updateNews" method="post">
+			<s:hidden value="%{#request.news.id}" name="news.id"/>
+			<s:hidden value="%{#request.news.number}" name="news.number"/>
+			<s:textfield id="newscontent"  value="%{#request.news.content}" />
 			<b>标题</b>
 			<br>
-			<input type="text" name="news.title" id="title">
+			<s:textfield type="text" name="news.title" id="title" value="%{#request.news.title}"/>
 			<br>
 			<b>作者</b>
 			<br>
-			<input type="text" name="news.author">
+			<s:textfield type="text" name="news.author" value="%{#request.news.author}"/>
 			<br>
 			<b>来源</b>
 			<br> 
-			<input type="text" name="news.source" class="source">
-			<br>
-			<b>正文</b>
-			<br> 
+			<s:textfield type="text" name="news.source" class="source" value="%{#request.news.source}"/>
 			<textarea name="news.content" cols="100" rows="8" style="width:717px;height:500px;visibility:hidden;"></textarea>
 		    <input class="cancel" type="button" value="取消" onclick="window.history.go(-1)">
 			<input class="save" type="submit" value="保存">

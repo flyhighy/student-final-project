@@ -1,0 +1,147 @@
+body {
+	font-family: Tahoma, 'Microsoft Yahei', 'Simsun';
+	background: url("../images/bg1.png") repeat-x;
+}
+
+.clearfix:after {
+	content: '\0020';
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden
+}
+
+.clearfix {
+	*zoom: 1
+}
+
+.wrapper {
+	width: 1000px;
+	margin-left: 20px;
+	margin-top: -80px;
+	margin-bottom: 50px;
+	font-family: Tahoma, 'Microsoft Yahei', 'Simsun';
+	background-color: #fff;
+}
+
+.title {
+	background: url("../images/news_title.png") center no-repeat;
+	background-position: center -240px;
+	height: 60px;
+	text-align: center;
+}
+
+.title h3 {
+	line-height: 60px;
+	font-size: 24px;
+	color: #fff;
+	font-weight: 300;
+}
+
+.contain {
+	width: 800px;
+	margin: 10px auto;
+	overflow: hidden;
+	border: 1px solid #eee;
+	color: #999;
+	font-size: 18px;
+}
+
+.contain .item {
+	border-bottom: 1px solid #eee;
+	padding: 10px;
+}
+
+.contain .item:hover{
+	background-color:#eee;
+}
+
+.contain .name {
+	padding-left: 10px;
+	color: #999;
+}
+
+.contain .name:hover{
+	text-decoration:underline;
+	color:red;
+}
+
+.contain a {
+	text-decoration: none;
+}
+
+.contain .time {
+	float: right;
+	color: #468847;
+}
+
+.user-trace {
+	width: 800px;
+	margin: 10px auto;
+	padding-left: 10px;
+	color: #333;
+	font-size: 14px;
+	line-height: 2.5;
+	background-color: #eee;
+}
+
+.user-trace a {
+	text-decoration: none;
+	color: #333;
+}
+
+.news-title {
+	background: url("../images/news_title.png") center no-repeat;
+	background-position: center 0;
+	height: 60px;
+	text-align: center;
+}
+
+.news-title h3 {
+	line-height: 60px;
+	font-size: 24px;
+	color: #fff;
+	font-weight: 300;
+}
+
+.pages {
+	text-align: center;
+	padding-top: 5px;
+}
+
+.pages a {
+	border: 1px solid #9aafe5;
+	color: #2e6ab1;
+	margin: 0 2px;
+	padding: 2px 5px;
+	text-decoration: none;
+	font-size: 18px;
+}
+
+.pages .highlight {
+	background-color: #2e6ab1;
+	border: 1px solid navy;
+	color: #fff;
+}
+.content-detail{
+	width:717px;
+	margin:auto;
+	padding-bottom:30px;
+}
+
+.news-detail h3{
+	color:#062b6e;
+}
+
+.title-item{
+	text-align:center;
+	display:inline-block;
+	padding-right:10px;
+	color:#000;
+}
+
+.news-msg{
+	text-align:center;
+	margin:10px;
+}
+

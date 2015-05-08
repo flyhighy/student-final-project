@@ -9,7 +9,7 @@
     <link rel="shortcut icon" type="image/ico" href="../images/favicon.ico">
     <script src="http://g.tbcdn.cn/kissy/k/1.4.0/seed-min.js"
 	charset="utf-8" data-config="{combine:true}"></script>
-<script src="../../files/js/header.js" charset="utf-8"></script>
+<script src="../../files/js/admin-header.js" charset="utf-8"></script>
 </head>
 <body>
 <div class="container-wrapper">
@@ -25,7 +25,8 @@
             <a class="item" href="../../adminUser" target="_parent"><span>成员管理</span></a>
             <a class="item" href="../../adminDownload" target="_parent"><span>下载专区</span></a>
             <a class="item" href="#" target="_parent"><span>网上报名</span></a>
-            <a class="item" href="#" target="_parent"><sapn>留言评论</sapn></a>
+            <a class="item" href="#" target="_parent"><span>留言评论</span></a>
+            <a class="item" href="../../adminHeadnews" target="_parent"><span>今日头条</span></a>
             <span class="user-operation">
             	<a class="J_user" href="#"></a>
             	<a href="../../login" target="_parent">退出</a>

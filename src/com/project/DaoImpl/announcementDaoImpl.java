@@ -21,10 +21,11 @@ public class announcementDaoImpl extends HibernateDaoSupport implements announce
 	
 	@SuppressWarnings("unchecked")
 	public List<Announcement> fildAll(){
-		String hql = "from Announcement announcement";
+		String hql = "from Announcement announcement order by announcement.time desc";
 		List<Announcement> list = (List<Announcement>)this.getHibernateTemplate().find(hql);
 		return list;
 	}
+	
 	
 	public Announcement findMessage(int id){
 		String hql = "from Announcement announcement where announcement.id=?";

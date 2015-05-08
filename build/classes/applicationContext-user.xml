@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+	<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+	<property name="url" value="jdbc:mysql://localhost:3306/mydb"></property>
+	<property name="username" value="root"></property>
+	<property name="password" value="root"></property>
+    <property name="maxActive" value="100"></property>
+    <property name="maxIdle" value="30"></property>
+    <property name="maxWait" value="500"></property>
+    <property name="defaultAutoCommit"  value="true"></property>
+	</bean>
+	 
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+	<property name="dataSource" ref="dataSource"></property>
+	<property name="hibernateProperties">
+	<props>
+	<prop key="hibernate.dialect">org.hibernate.dialect.MySQLInnoDBDialect</prop>
+	<prop key="hibernate.show_sql">true</prop>
+	</props>
+	</property>
+	<property name="mappingResources">
+	   <list>
+			<value>com/project/bean/Achievement.hbm.xml</value>
+			<value>com/project/bean/Announcement.hbm.xml</value>
+			<value>com/project/bean/Download.hbm.xml</value>
+			<value>com/project/bean/Form.hbm.xml</value>
+			<value>com/project/bean/News.hbm.xml</value>
+			<value>com/project/bean/User.hbm.xml</value>
+			<value>com/project/bean/Shortdec.hbm.xml</value>
+			<value>com/project/bean/Competition.hbm.xml</value>
+			<value>com/project/bean/Team.hbm.xml</value>
+			<value>com/project/bean/Headnews.hbm.xml</value>
+	   </list>
+	</property>
+    </bean>
+    
+    <bean id="adminDao" class="com.project.DaoImpl.adminDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="shortdecDao" class="com.project.DaoImpl.shortdecDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="newsDao" class="com.project.DaoImpl.newsDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="announcementDao" class="com.project.DaoImpl.announcementDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="competitionDao" class="com.project.DaoImpl.competitionDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="achievementDao" class="com.project.DaoImpl.achievementDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="userDao" class="com.project.DaoImpl.userDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="teamDao" class="com.project.DaoImpl.teamDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="downloadDao" class="com.project.DaoImpl.downloadDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="headnewsDao" class="com.project.DaoImpl.headnewsDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<!-- 获取资讯	 -->
+	<bean id="getHeadnews" class="com.project.userAction.headnewsAction" scope="prototype">
+		<property name="headnewsDao" ref="headnewsDao"></property>
+	</bean>
+	
+	<!-- 获取通知	 -->
+	<bean id="getAnnouncement" class="com.project.userAction.announcementAction" scope="prototype">
+		<property name="announcementDao" ref="announcementDao"></property>
+	</bean>
+	
+	<!-- 获取热点新闻	 -->
+	<bean id="gethotNews" class="com.project.userAction.newsAction" scope="prototype">
+		<property name="newsDao" ref="newsDao"></property>
+	</bean>
+	
+		
+	<!-- 获取下载	 -->
+	<bean id="getDownload" class="com.project.userAction.pageAction" scope="prototype">
+		<property name="downloadDao" ref="downloadDao"></property>
+	</bean>
+	
+	<!-- 获取详细新闻	 -->
+	<bean id="userNewsDetail" class="com.project.userAction.newsAction" scope="prototype">
+		<property name="newsDao" ref="newsDao"></property>
+	</bean>
+	
+	<!-- 获取详细通知	 -->
+	<bean id="userAnnouncementDetail" class="com.project.userAction.announcementAction" scope="prototype">
+		<property name="announcementDao" ref="announcementDao"></property>
+	</bean>
+
+	
+	
+</beans>

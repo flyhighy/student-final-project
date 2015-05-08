@@ -52,7 +52,7 @@
     </style>
     <script>
 	    KindEditor.ready(function(K) {
-	   	 editor1 = K.create('textarea[name="news.content"]', {
+	   	 editor1 = K.create('textarea[name="headnews.content"]', {
 	   		cssPath : 'kindeditor/plugins/code/prettify.css',
 	   		uploadJson : 'kindeditor/jsp/upload_json.jsp',
 	   		fileManagerJson : 'kindeditor/jsp/file_manager_json.jsp',
@@ -61,6 +61,17 @@
 	   		afterCreate : function() {
 	   		}
 	   	});
+	   	 
+	   editor2 = K.create('textarea[name="headnews.image"]', {
+		   	items : [ 'undo', 'redo', '|', 'image'],
+	   		cssPath : 'kindeditor/plugins/code/prettify.css',
+	   		uploadJson : 'kindeditor/jsp/upload_json.jsp',
+	   		fileManagerJson : 'kindeditor/jsp/file_manager_json.jsp',
+	   		allowFileManager : true,
+	   		afterBlur:function(){this.sync();},
+	   		afterCreate : function() {
+	   		}
+	   });
 	   	prettyPrint();
 	   });
     </script>
@@ -69,22 +80,26 @@
 <iframe src="files/pages/admin-header.jsp" marginheight="0" hidefocus="true" frameborder="0" scrolling="no" allowtransparency="yes" seamless  tabindex="" style="width: 100%; height:181px;;"></iframe>
 <div class="content-wrapper">
 	<div class="content clearfix">
-		<form class="mynews" action="saveNews" method="post">
+		<form class="mynews" action="saveHeadnews" method="post">
 			<b>标题</b>
 			<br>
-			<input type="text" name="news.title" id="title">
+			<input type="text" name="headnews.title" id="title">
 			<br>
 			<b>作者</b>
 			<br>
-			<input type="text" name="news.author">
+			<input type="text" name="headnews.author">
 			<br>
 			<b>来源</b>
 			<br> 
-			<input type="text" name="news.source" class="source">
+			<input type="text" name="headnews.source" class="source">
+			<br>		
+			<b>头条图片</b>
+			<br>
+			<textarea name="headnews.image"  style="width:100px;height:250px;visibility:hidden;"></textarea>
 			<br>
 			<b>正文</b>
-			<br> 
-			<textarea name="news.content" cols="100" rows="8" style="width:717px;height:500px;visibility:hidden;"></textarea>
+			<br>
+			<textarea name="headnews.content" cols="100" rows="8" style="width:717px;height:500px;visibility:hidden;"></textarea>
 		    <input class="cancel" type="button" value="取消" onclick="window.history.go(-1)">
 			<input class="save" type="submit" value="保存">
 		</form>

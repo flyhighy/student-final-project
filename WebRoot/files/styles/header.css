@@ -3,49 +3,62 @@
     padding: 0;
 }
 
-body{
-    /*background: url("../images/bg.png");*/
-}
-
-.logo-img{
-    display: block;
-    width: 1000px;
-    height: 200px;
-    border-radius: 3px;
-}
-
 .container-wrapper{
-    width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
-    font-family:"Microsoft YaHei",simsun;;
+    background:url("../images/heard_bg.png");
+}
+
+header{
+    height:95px;
+    width:1170px;
+    margin: auto;
+}
+.logo{
+    padding-left:15px;
+    padding-top:15px;
+    float: left;
+    display: inline-block;
+}
+
+.logo img{
+    height: 80px;
 }
 
 .nav{
-    width: 1000px;
-    background-color: rgba(71, 143, 150, 0.69);
-    border-radius: 3px;
-}
-
-.nav .item{
     display: inline-block;
-    text-decoration: none;
-    text-align: center;
-    padding: 5px 0px;
+    width:680px;
+    float:left;
+    line-height: 42px;
+    margin-top: 53px;
+    margin-left: 55px;
+    background-color: #4a4a4a;
+}
+
+.nav .nav-items .item{
+    list-style: none;
+    float: left;
+}
+
+.nav ul li a{
     font-size: 14px;
-    color: #fff;
+    padding: 11px 18px;
+    color: #ccc;
+    text-decoration: none;
 }
 
-.nav .item span{
-    padding: 0px 10px;
-    border-right: #ccc solid 1px;
+.child-box{
+    background-color: #4a4a4a;
+    display: none;
 }
 
-.nav a.item:hover{
-    color: #000;
+.child-box ul li{
+    list-style: none;
+    line-height: 2;
 }
 
-.nav a.active{
-    color: #000;
+.child-box ul li .child-item{
+    text-decoration: none;
+    padding: 5px 10px;
 }
+
+
 
