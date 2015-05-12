@@ -37,7 +37,7 @@
 
 		 var xmlHttp=new XMLHttpRequest();
 		 if(xmlHttp){
-				var url = "http://wanghengfei:8080/robotmessage/getShortdec";
+				var url = "http://localhost:8080/robotmessage/getShortdec";
 				xmlHttp.onreadystatechange=function(){
 					if (xmlHttp.readyState==4)
 					 {

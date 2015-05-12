@@ -129,6 +129,11 @@
 	<bean id="userAnnouncementDetail" class="com.project.userAction.announcementAction" scope="prototype">
 		<property name="announcementDao" ref="announcementDao"></property>
 	</bean>
+	
+	<!-- 获取详细头条信息	 -->
+	<bean id="headNewsDetail" class="com.project.userAction.headnewsAction" scope="prototype">
+		<property name="headnewsDao" ref="headnewsDao"></property>
+	</bean>
 
 	
 	

@@ -13,14 +13,13 @@ KISSY.use('core,xtemplate', function(S,Core,XTemplate) {
 
  	var search = location.search;
   	var id = search.split("=")[1];
-  	var url1 ="http://wanghengfei:8080/robotmessage/userAnnouncementDetail?announcement.id="+id;
+  	var url1 ="http://localhost:8080/robotmessage/userAnnouncementDetail?announcement.id="+id;
 	  KISSY.IO({ 
 	        url : url1,
 	        type : "post",
 	        dataType:'json',
 	        contentType:false,
 	        success : function(data){
-	        	console.log(data);
 	        	var date=new Date();
     			date.setTime(data[0].time.time);
     			var time = date.getFullYear() + '-' +(date.getMonth()+1)+'-'+date.getDay();

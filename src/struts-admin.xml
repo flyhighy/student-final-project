@@ -33,7 +33,7 @@
 		</action>
 		
 		<!--获取基地介绍-->
-		<action name="getShortdec" class="getShortdec" method="getShortdec">
+		<action name="getShortdec" class="getShortdec" method="getShortdecDetail">
 		</action>
 		
 		<!--管理员编辑基地介绍-->

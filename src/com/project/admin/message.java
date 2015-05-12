@@ -139,4 +139,7 @@ public class message extends ActionSupport {
 
 		return SUCCESS;
 	}
+	
+	
+	
 }

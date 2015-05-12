@@ -13,7 +13,11 @@
 		
 		</action>
 		
-		<action name="getAnnouncement" class="getAnnouncement" method="getAnnouncement">
+		<action name="headNewsDetail" class="headNewsDetail" method="headNewsDetail">
+		
+		</action>
+		
+		<action name="getAnnouncement" class="getAnnouncement" method="getAnnouncements">
 		
 		</action>
 		

@@ -48,7 +48,7 @@ KISSY.use('core,xtemplate', function(S,Core,XTemplate) {
          S.one(".J_contain").html(render);
 	};
 	  KISSY.IO({
-	        url : "http://wanghengfei:8080/robotmessage/getAnnouncement",
+	        url : "http://localhost:8080/robotmessage/getAnnouncement",
 	        type : "post",
 	        dataType:'json',
 	        contentType:false,

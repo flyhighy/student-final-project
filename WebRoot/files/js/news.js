@@ -58,7 +58,7 @@ KISSY.use('core,xtemplate', function(S,Core,XTemplate) {
 	
 
 	KISSY.IO({
-		url : "http://wanghengfei:8080/robotmessage/newsPages",
+		url : "http://localhost:8080/robotmessage/newsPages",
 		type : "post",
 		dataType:'json',
 	    contentType:false,
@@ -102,7 +102,7 @@ KISSY.use('core,xtemplate', function(S,Core,XTemplate) {
 	body.delegate("click",".J_search",function(){
 		var serachOption = body.one(".J_searchOption").val();
 		KISSY.IO({
-			url : "http://wanghengfei:8080/robotmessage/searchNews?searchOption="+serachOption,
+			url : "http://localhost:8080/robotmessage/searchNews?searchOption="+serachOption,
 			type : "post",
 			dataType:'json',
 		    contentType:false,

@@ -26,7 +26,7 @@ public class getShortdec extends ActionSupport {
 	}
 
 
-	public void getShortdec() throws Exception{
+	public void getShortdecDetail() throws Exception{
 		
 		
 		// TODO Auto-generated constructor stub

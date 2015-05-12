@@ -24,6 +24,12 @@ public class announcementAction extends ActionSupport {
 	private Announcement announcement;
 	
 
+
+
+	public Announcement getAnnouncement() {
+		return announcement;
+	}
+
 	public void setAnnouncement(Announcement announcement) {
 		this.announcement = announcement;
 	}
@@ -35,10 +41,7 @@ public class announcementAction extends ActionSupport {
 	public void setAnnouncementDao(announcementDao announcementDao) {
 		this.announcementDao = announcementDao;
 	}
-
-	public announcementAction() {
-		// TODO Auto-generated constructor stub
-	}
+	
 	
 	public void userAnnouncementDetail() throws Exception{
 		HttpServletRequest request = ServletActionContext.getRequest();
@@ -59,11 +62,16 @@ public class announcementAction extends ActionSupport {
 		out.print(json1);
 	}
 	
+
 	
-	public void getAnnouncement() throws Exception{
+
+	public void getAnnouncements() throws Exception{
 		List<Announcement> list = this.announcementDao.fildAll();
 		json(list);
 	}
+	
+	
+	
 	
 	//list转化为json对象
 		public void json(List<Announcement> list) throws Exception{
