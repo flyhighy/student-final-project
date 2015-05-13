@@ -1,7 +1,7 @@
 /**
  * Created by fly on 2015/4/23.
  */
-KISSY.use("core",function(S,Core){
+/*KISSY.use("core",function(S,Core){
     var nav = S.one(".J_nav");
     nav.delegate("mouseenter",".item",function(e){
        var target = S.one(e.target);
@@ -11,4 +11,4 @@ KISSY.use("core",function(S,Core){
             childBox.show();
         }
     });
-})
+})*/

@@ -40,6 +40,23 @@
 		<action name="userAnnouncementDetail" class="userAnnouncementDetail" method="userAnnouncementDetail">
 		
 		</action>
+		
+		<action name="getAchievements" class="getAchievements" method="getAchievements">
+		
+		</action>
+		
+		
+		<action name="userAchievementDetail" class="userAchievementDetail" method="userAchievementDetail">
+		
+		</action>
+		
+		<action name="getCompetitions" class="getCompetitions" method="getCompetitions">
+		
+		</action>
+		
+		<action name="userCompetitionDetail" class="userCompetitionDetail" method="userCompetitionDetail">
+		
+		</action>
 
 	</package>
 </struts>

@@ -134,6 +134,26 @@
 	<bean id="headNewsDetail" class="com.project.userAction.headnewsAction" scope="prototype">
 		<property name="headnewsDao" ref="headnewsDao"></property>
 	</bean>
+	
+	<!-- 获取荣誉成果	 -->
+	<bean id="getAchievements" class="com.project.userAction.achievementAction" scope="prototype">
+		<property name="achievementDao" ref="achievementDao"></property>
+	</bean>
+	
+	<!-- 获取详细荣誉成果	 -->
+	<bean id="userAchievementDetail" class="com.project.userAction.achievementAction" scope="prototype">
+		<property name="achievementDao" ref="achievementDao"></property>
+	</bean>
+	
+	<!-- 获取参赛经历	 -->
+	<bean id="getCompetitions" class="com.project.userAction.competitionAction" scope="prototype">
+		<property name="competitionDao" ref="competitionDao"></property>
+	</bean>
+	
+	<!-- 获取详细参赛经历	 -->
+	<bean id="userCompetitionDetail" class="com.project.userAction.competitionAction" scope="prototype">
+		<property name="competitionDao" ref="competitionDao"></property>
+	</bean>
 
 	
 	

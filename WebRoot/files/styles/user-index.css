@@ -3,6 +3,10 @@ body{
     font-family: Tahoma, 'Microsoft Yahei', 'Simsun';
 }
 
+.header{
+	height:100px;
+}
+
 .clearfix:after {
     content: '\0020';
     display: block;
@@ -16,7 +20,6 @@ body{
 .wrapper{
     width:1170px;
     margin: auto;
-    margin-top: -80px;
     margin-bottom: 50px;
 }
 
@@ -344,7 +347,6 @@ h5 {
     display:block;
     text-decoration: none;
     font-size: 16px;
-    color: #333;
     padding: 5px;
 }
 
@@ -392,7 +394,6 @@ h5 {
     display:block;
     text-decoration: none;
     font-size: 16px;
-    color: #333;
     padding: 5px;
 }
 
@@ -404,6 +405,14 @@ h5 {
     float: right;
     color: #b94a48;
     font-size: 14px;
+}
+
+.honor-item .news-title{
+	color:#355976;
+}
+
+.competition-item .news-title{
+	color:#6ec376;
 }
 
 

@@ -64,8 +64,9 @@ public class competition extends ActionSupport {
 	
 	//保存参赛经历
 	public String saveCompetition() throws Exception{
-		System.out.println();
+		for(int i=0;i<30;i++){
 		this.competitionDao.saveCompetition(competition);
+		}
 		return SUCCESS;
 	}
 	

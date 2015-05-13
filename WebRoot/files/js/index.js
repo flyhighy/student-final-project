@@ -86,7 +86,7 @@ KISSY.use("core,io,xtemplate",function(S,Core,IO,XTemplate){
 				   '<span class="news-time clearfix">{{this.date}}</span>'+
 				   '</a>'+				   
     		  '{{/each}}'+
-    		  '<div class="more"> <a href="http://localhost:8080/robotmessage/files/user-page/news.html">更多</a></div>';
+    		  '<div class="more"> <a href="http://localhost:8080/robotmessage/files/user-page/news.html">更多></a></div>';
     
     KISSY.IO({
         url : "http://localhost:8080/robotmessage/newsPages",
@@ -114,7 +114,7 @@ KISSY.use("core,io,xtemplate",function(S,Core,IO,XTemplate){
 		   '<span class="news-time clearfix">{{this.date}}</span>'+
 		   '</a>'+				   
 	   '{{/each}}'+
-	   '<div class="more"> <a href="http://localhost:8080/robotmessage/files/user-page/announcement.html">更多</a></div>';
+	   '<div class="more"> <a href="http://localhost:8080/robotmessage/files/user-page/announcement.html">更多></a></div>';
     
     KISSY.IO({
         url : "http://localhost:8080/robotmessage/getAnnouncement",
@@ -174,7 +174,7 @@ KISSY.use("core,io,xtemplate",function(S,Core,IO,XTemplate){
         contentType:false,
         success : function(data){
         //	var render = new XTemplate(hotnews).render(data);
-        	var contain = '<div class="shortdec">'+data+'</div>'+'<div class="more"> <a href="http://localhost:8080/robotmessage/files/user-page/shortdec.html">更多</a></div>';
+        	var contain = '<div class="shortdec">'+data+'</div>'+'<div class="more"> <a href="http://localhost:8080/robotmessage/files/user-page/shortdec.html">更多></a></div>';
             S.one(".J_shortdec").html(contain);
     	}
     });
@@ -188,6 +188,67 @@ KISSY.use("core,io,xtemplate",function(S,Core,IO,XTemplate){
     		top=0;
     	}
     },100);
+    
+    
+    var achievement = '{{#each data}}'+
+	   '<a href="http://localhost:8080/robotmessage/files/user-page/achievement-detail.html?id={{id}}" class="news-item clearfix">'+
+	   '<span class="news-title">{{this.name}}</span>'+
+	   '<span class="news-time clearfix">{{this.date}}</span>'+
+	   '</a>'+				   
+	   '{{/each}}'+
+	   '<div class="more"> <a href="http://localhost:8080/robotmessage/files/user-page/achievement.html">更多></a></div>';
+
+		KISSY.IO({
+		 url : "http://localhost:8080/robotmessage/getAchievements",
+		 type : "post",
+		 dataType:'json',
+		 contentType:false,
+		 success : function(data){
+		 	var len = data.length>7?7:data.length;
+		 	var data1={};
+				data1.data=data.slice(0,7);
+				for(i=0;i<len;i++){
+					var date=new Date();
+					date.setTime(data1.data[i].time.time);
+					var time = date.getFullYear() + '-' +(date.getMonth()+1)+'-'+date.getDay();
+					data1.data[i].date = time;
+				}
+		     var render = new XTemplate(achievement).render(data1);
+		     S.one(".J_honorItem").html(render);
+		
+			}
+		});
+		
+		
+		
+		var competition = '{{#each data}}'+
+		   '<a href="http://localhost:8080/robotmessage/files/user-page/competition-detail.html?id={{id}}" class="news-item clearfix">'+
+		   '<span class="news-title">{{this.name}}</span>'+
+		   '<span class="news-time clearfix">{{this.date}}</span>'+
+		   '</a>'+				   
+		   '{{/each}}'+
+		   '<div class="more"> <a href="http://localhost:8080/robotmessage/files/user-page/competition.html">更多></a></div>';
+
+			KISSY.IO({
+			 url : "http://localhost:8080/robotmessage/getCompetitions",
+			 type : "post",
+			 dataType:'json',
+			 contentType:false,
+			 success : function(data){
+			 	var len = data.length>7?7:data.length;
+			 	var data1={};
+					data1.data=data.slice(0,7);
+					for(i=0;i<len;i++){
+						var date=new Date();
+						date.setTime(data1.data[i].time.time);
+						var time = date.getFullYear() + '-' +(date.getMonth()+1)+'-'+date.getDay();
+						data1.data[i].date = time;
+					}
+			     var render = new XTemplate(competition).render(data1);
+			     S.one(".J_competitionItem").html(render);
+			
+				}
+			});
     
     
 });

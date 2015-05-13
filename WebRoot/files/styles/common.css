@@ -1,0 +1,23 @@
+.wrapper{
+	min-height:1000px;
+}
+
+#head-news{
+	width: 300px;
+    position: absolute;
+    left: 1020px;
+    top: 120px;
+    height: 1300px;
+}
+
+.clearfix:after {
+	content: '\0020';
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden
+}
+
+.clearfix {
+	*zoom: 1
+}

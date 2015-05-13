@@ -70,7 +70,6 @@ public class achievement extends ActionSupport {
 	
 	//±£¥Ê»Ÿ”˛
 	public String saveAchievement() throws Exception{
-		System.out.println();
 		this.achievementDao.saveAchievement(achievement);
 		return SUCCESS;
 	}

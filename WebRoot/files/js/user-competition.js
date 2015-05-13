@@ -1,7 +1,7 @@
 KISSY.use('core,xtemplate', function(S,Core,XTemplate) {
 	var news='{{#each data}}'+
 					 '<p class="item">'+
-						 '<a class="name" href="news-detail.html?id={{id}}">{{title}}</a>'+
+						 '<a class="name" href="competition-detail.html?id={{id}}">{{name}}</a>'+
 						 '<span class="time">{{date}}</span>'+
 					 '</p>'+
 				 '{{/each}}';
@@ -10,7 +10,7 @@ KISSY.use('core,xtemplate', function(S,Core,XTemplate) {
 	function initPages(num){
 		var n = num/20;
 		var pages = '';
-		if(num<10){
+		if(num<20){
 			pages += "<a href='#' data-id='1'>1</a>";
 		}else{
 			for(i=1;i<n+1;i++){
@@ -48,7 +48,7 @@ KISSY.use('core,xtemplate', function(S,Core,XTemplate) {
          S.one(".J_contain").html(render);
 	};
 	  KISSY.IO({
-	        url : "http://localhost:8080/robotmessage/newsPages",
+	        url : "http://localhost:8080/robotmessage/getCompetitions",
 	        type : "post",
 	        dataType:'json',
 	        contentType:false,
