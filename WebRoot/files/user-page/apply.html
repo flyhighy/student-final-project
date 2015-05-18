@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+<title>西工大竞技机器人信息网</title>
+<link rel="stylesheet" href="../styles/footer.css">
+<link rel="stylesheet" href="../styles/header.css">
+<link rel="stylesheet" href="..//styles/user-news.css">
+<script src="//g.alicdn.com/kissy/k/1.4.8/seed-min.js"
+	type="text/javascript"></script>
+	<script type="text/javascript">
+		window.onload=function(){
+			 var doc;
+			 if (document.all){ // IE 
+			  doc = document.frames[0].document; 
+			 }else{ // 标准
+			  doc = document.getElementsByTagName("iframe")[0].contentDocument; 
+			 }
+			 
+			 var item = doc.getElementsByClassName("item");
+			 var len = item.length;
+			 for(i = 0;i<len;i++){
+			 	item[i].setAttribute("class","item");
+			 }
+			 item[7].setAttribute("class","item highlight");
+	 }	
+</script>
+	<style>
+		.news-title {
+		background-position: center -120px;
+		}
+		
+		.item span{
+			display:inline-block;
+			width:100px;
+			text-align:right;
+		}
+		
+		.item textarea{
+			  overflow-x: scroll
+		}
+		
+		.result{
+			margin:20px 110px;
+		}
+		.result input{
+			border-radius:5px;
+			cursor:pointer;
+			background-color:#eee;
+			padding:2px 15px;
+		}
+	</style>
+</head>
+
+<body>
+	<iframe src="header.html" marginheight="0" hidefocus="true"
+		frameborder="0" scrolling="no" allowtransparency="yes" seamless
+		tabindex="" style="width: 100%; height:198px;"></iframe>
+	<div class="wrapper">
+		<div class="news-title"><h3>网上报名</h3></div>
+		<div class="user-trace">
+			<a href="../../index">首页</a>
+			>
+			<a href="../../files/user-page/announcement.html">网上报名</a>
+		</div>
+		<div class="contain news-detail J_content">		
+			<form action="../../saveForm" method="post">
+				<div class="user-msg">
+					<div class="item">
+						<span>姓名：</span>
+						<input name="form.name" type="text"/>
+					</div>
+					
+					<div class="item">
+						<span>性别：</span>
+						<select name="form.sex">
+							<option value="男">男</option>
+							<option value="女">女</option>
+						</select>
+					</div>
+					
+					<div class="item">
+						<span>学号：</span>
+						<input name="form.studentId" type="text"/>
+					</div>
+					
+					<div class="item">
+						<span>电话：</span>
+						<input name="form.phone" type="text"/>
+					</div>
+					
+					<div class="item">
+						<span>email：</span>
+						<input name="form.email" type="email"/>
+					</div>
+					
+					
+					<div class="item">
+						<span>学院/专业：</span>
+						<input name="form.department" type="text"/>
+					</div>
+					
+					<div class="item">
+						<span>成绩排名：</span>
+						<input name="form.grade" type="text"/>
+					</div>
+					
+					<div class="item">
+						<span style="vertical-align:top">所会编程语言：</span>
+						<textarea cols="50" rows="5" name="form.language"></textarea>
+					</div>
+					
+					<div class="item">
+						<span style="vertical-align:top">专长：</span>
+						<textarea cols="50" rows="5" name="form.specialty"></textarea>
+					</div>
+					<div class="item">
+						<span style="vertical-align:top">开发经验或参赛经历：</span>
+						<textarea cols="50" rows="5" name="form.experience"></textarea>
+					</div>
+					
+					<div class="item">
+						<span style="vertical-align:top">兴趣爱好：</span>
+						<textarea cols="50" rows="5" name="form.hobby"></textarea>
+					</div>
+					
+					<div class="item">
+						<span style="vertical-align:top">个人评价：</span>
+						<textarea cols="50" rows="5" name="form.inroduction"></textarea>
+					</div>
+					
+					
+					
+					<div class="result">
+						<input type="submit" value="提交">
+						<input type="reset" value="重置"> 
+					</div>
+					
+				</div>
+			</form>	
+		</div>
+	</div>
+	<iframe src="footer.html" marginheight="0" hidefocus="true"
+		frameborder="0" scrolling="no" allowtransparency="yes" seamless
+		tabindex="" style="width: 100%; height: 200px;"></iframe>
+</body>
+</html>

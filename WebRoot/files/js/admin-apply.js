@@ -5,10 +5,10 @@ KISSY.use('core,xtemplate', function(S,Core,XTemplate) {
 				'<p class="news-item">'+
 					'<span class="choose">'+
 						'<input name="checkOption" class="choose-box" type="checkbox" value="{{id}}"> </span>'+
-						'<a class="news-title"	href="newsDetail?news.id={{id}}">{{this.title}}</a>'+
-						'<span class="operator"><a href="editNews?news.id={{id}}">编辑</a>|<a href="delNews?news.id={{id}}">删除</a></span>'+
-						'<span class="author">{{author}}</span>'+ 
-						'<span class="click-num">{{number}}</span>'+
+						'<span class="news-title">{{this.name}}</span>'+
+						'<span class="operator"><a href="viewForm?form.id={{id}}">查看</a>|<a href="delForm?form.id={{id}}">删除</a></span>'+
+//						'<span class="author">{{department}}</span>'+ 
+						'<span class="click-num">{{date}}</span>'+
 				'</p>'+
 				'{{/each}}';
 	
@@ -52,18 +52,26 @@ KISSY.use('core,xtemplate', function(S,Core,XTemplate) {
 		var data1={};
 		data1.data=mydata.slice(pageNum*10,pageNum*10+10);
         var render = new XTemplate(tpl).render(data1);
-        S.one(".J_news").html(render);
+        S.one(".J_apply").html(render);
 	};
 	
 	
 
 	KISSY.IO({
-		url : "../robotmessage/newsPages",
+		url : "../robotmessage/getApplys",
 		type : "post",
 		dataType:'json',
 	    contentType:false,
 		success : function(data) {
+			
+			
 			for(i=0;i<data.length;i++){
+				if(data[i].time){
+					var date=new Date();
+	    			date.setTime(data[i].time.time);
+	    			var time = date.getFullYear() + '-' +(date.getMonth()+1)+'-'+date.getDay();
+	    			data[i].date = time;
+				}				
 				alldata.push(data[i]);
 			}
 			
@@ -99,52 +107,7 @@ KISSY.use('core,xtemplate', function(S,Core,XTemplate) {
 	
 	
 	var body = S.one("body");
-	body.delegate("click",".J_search",function(){
-		var serachOption = body.one(".J_searchOption").val();
-		KISSY.IO({
-			url : "../robotmessage/searchNews?searchOption="+serachOption,
-			type : "post",
-			dataType:'json',
-		    contentType:false,
-			success : function(data) {
-				for(i=0;i<data.length;i++){
-					searchData.push(data[i]);
-				}
-				
-		        initPages(data.length);
-		        init(data);
-		        
-		        var pages = S.one(".pages");
-		        pages.undelegate("click",".J_pagenum");
-		        pages.undelegate("click",".J_prev");
-		        pages.undelegate("click",".J_next");
-		        
-		        pages.delegate("click",".J_pagenum",function(e){
-		        	var target=S.one(e.target);
-		        	pages.all(".J_pagenum").removeClass("highlight");
-		        	target.addClass("highlight");
-		        	var num = target.attr("data-id");
-		        	init(searchData,num);
-		        });
-		        
-		        pages.delegate("click",".J_prev",function(){
-		        	var nowPage = S.one(".highlight");
-		        	var nownum = nowPage.attr("data-id");
-		        	nowPage.prev("a").addClass("highlight");
-		        	nowPage.removeClass("highlight");
-		        	init(searchData,nownum-1);
-		        });
-		        
-		        pages.delegate("click",".J_next",function(){
-		        	var nowPage = S.one(".highlight");
-		        	var nownum = nowPage.attr("data-id");
-		        	nowPage.next("a").addClass("highlight");
-		        	nowPage.removeClass("highlight");
-		        	init(searchData,1+parseInt(nownum));
-		        });
-			}
-		});
-	});
+
 	
 	
 	

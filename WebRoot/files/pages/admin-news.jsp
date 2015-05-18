@@ -5,7 +5,6 @@
 <head lang="en">
 <meta charset="UTF-8">
 <title>管理员页面</title>
-<link rel="shortcut icon" type="image/ico" href="../images/favicon.ico">
 <link rel="stylesheet" href="files/styles/news.css" />
 <script src="http://g.tbcdn.cn/kissy/k/1.4.0/seed-min.js"
 	charset="utf-8" data-config="{combine:true}"></script>

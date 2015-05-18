@@ -379,6 +379,20 @@
 				<result name="success" type="redirectAction">adminHeadnews</result>
 		</action>
 		
+		<!--管理员获取网上申请-->
+		<action name="getApplys" class="getApplys" method="getApplys">
+		</action>
+		
+		<!--管理员删除网上申请-->
+		<action name="delForm" class="delForm" method="delForm">
+			<result name="success">/files/pages/admin-apply.jsp</result>
+		</action>
+		
+		<!--管理员查看网上申请-->
+		<action name="viewForm" class="viewForm" method="viewForm">
+			<result name="success">/files/pages/admin-applyDetail.jsp</result>
+		</action>
+		
 		
 
 	</package>

@@ -1,5 +1,5 @@
 KISSY.use('core', function(S,Core) {
-  	var url1 ="http://localhost:8080/robotmessage/getShortdec";
+  	var url1 ="../robotmessage/getShortdec";
 	  KISSY.IO({ 
 	        url : url1,
 	        type : "post",

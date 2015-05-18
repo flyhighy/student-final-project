@@ -13,7 +13,7 @@ KISSY.use('core,xtemplate', function(S,Core,XTemplate) {
 
  	var search = location.search;
   	var id = search.split("=")[1];
-  	var url1 ="http://localhost:8080/robotmessage/userCompetitionDetail?competition.id="+id;
+  	var url1 ="../robotmessage/userCompetitionDetail?competition.id="+id;
 	  KISSY.IO({ 
 	        url : url1,
 	        type : "post",

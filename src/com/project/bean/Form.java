@@ -12,13 +12,18 @@ public class Form implements java.io.Serializable {
 
 	private Integer id;
 	private String name;
-	private Integer number;
-	private Integer department;
+	private String department;
 	private String grade;
 	private String phone;
 	private String email;
 	private String inroduction;
 	private Date time;
+	private String language;
+	private String specialty;
+	private String hobby;
+	private String experience;
+	private String sex;
+	private String studentId;
 
 	// Constructors
 
@@ -26,24 +31,24 @@ public class Form implements java.io.Serializable {
 	public Form() {
 	}
 
-	/** minimal constructor */
-	public Form(String name, Integer number, Integer department) {
-		this.name = name;
-		this.number = number;
-		this.department = department;
-	}
-
 	/** full constructor */
-	public Form(String name, Integer number, Integer department, String grade,
-			String phone, String email, String inroduction, Date time) {
+	public Form(String name, String department, String grade, String phone,
+			String email, String inroduction, Date time, String language,
+			String specialty, String hobby, String experience, String sex,
+			String studentId) {
 		this.name = name;
-		this.number = number;
 		this.department = department;
 		this.grade = grade;
 		this.phone = phone;
 		this.email = email;
 		this.inroduction = inroduction;
 		this.time = time;
+		this.language = language;
+		this.specialty = specialty;
+		this.hobby = hobby;
+		this.experience = experience;
+		this.sex = sex;
+		this.studentId = studentId;
 	}
 
 	// Property accessors
@@ -64,19 +69,11 @@ public class Form implements java.io.Serializable {
 		this.name = name;
 	}
 
-	public Integer getNumber() {
-		return this.number;
-	}
-
-	public void setNumber(Integer number) {
-		this.number = number;
-	}
-
-	public Integer getDepartment() {
+	public String getDepartment() {
 		return this.department;
 	}
 
-	public void setDepartment(Integer department) {
+	public void setDepartment(String department) {
 		this.department = department;
 	}
 
@@ -118,6 +115,54 @@ public class Form implements java.io.Serializable {
 
 	public void setTime(Date time) {
 		this.time = time;
+	}
+
+	public String getLanguage() {
+		return this.language;
+	}
+
+	public void setLanguage(String language) {
+		this.language = language;
+	}
+
+	public String getSpecialty() {
+		return this.specialty;
+	}
+
+	public void setSpecialty(String specialty) {
+		this.specialty = specialty;
+	}
+
+	public String getHobby() {
+		return this.hobby;
+	}
+
+	public void setHobby(String hobby) {
+		this.hobby = hobby;
+	}
+
+	public String getExperience() {
+		return this.experience;
+	}
+
+	public void setExperience(String experience) {
+		this.experience = experience;
+	}
+
+	public String getSex() {
+		return this.sex;
+	}
+
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
+
+	public String getStudentId() {
+		return this.studentId;
+	}
+
+	public void setStudentId(String studentId) {
+		this.studentId = studentId;
 	}
 
 }

@@ -16,7 +16,7 @@ KISSY.use('core,xtemplate', function(S,Core,XTemplate) {
 
  	var search = location.search;
   	var id = search.split("=")[1];
-  	var url ="http://localhost:8080/robotmessage/headNewsDetail?headnews.id="+id;
+  	var url ="../robotmessage/headNewsDetail?headnews.id="+id;
 	  KISSY.IO({ 
 	        url : url,
 	        type : "post",

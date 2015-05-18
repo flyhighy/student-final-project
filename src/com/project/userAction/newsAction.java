@@ -47,13 +47,10 @@ public class newsAction extends ActionSupport {
 	public void gethotNews() throws Exception{
 		
 		List<News> list = this.newsDao.getAll();
-		if(list.size()>30){
-			list = list.subList(0, 30);
-		}
 		json(list);
 	}
 	
-	public void userNewsDetail() throws Exception{
+	public void userNewsDetail() throws Exception{		
 		HttpServletRequest request = ServletActionContext.getRequest();
 		HttpServletResponse response = ServletActionContext.getResponse();
 		try {
@@ -66,7 +63,8 @@ public class newsAction extends ActionSupport {
 		PrintWriter out = response.getWriter();
 		JSONArray json = new JSONArray();   
 		News news1 = this.newsDao.findNews(news.getId());
-		
+		news1.setNumber(news1.getNumber()+1);
+		this.newsDao.updateNews(news1);
 		JSONObject jsonitem = JSONObject.fromObject(news1);
 		json.add(jsonitem);
 		out.println(json);

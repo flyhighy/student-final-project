@@ -6,7 +6,7 @@ KISSY.use('core,xtemplate', function(S,Core,XTemplate) {
 					 '</p>'+
 				 '{{/each}}';
 	  KISSY.IO({
-	        url : "http://localhost:8080/robotmessage/getDownload",
+	        url : "../robotmessage/getDownload",
 	        type : "post",
 	        dataType:'json',
 	        contentType:false,

@@ -1,6 +1,6 @@
 KISSY.use("core,io",function(S,Core,IO){
 	KISSY.IO({
-		url : "http://localhost:8080/robotmessage/getPageMsg",
+		url : "../robotmessage/getPageMsg",
 		type : "post",
 		dataType:'json',
 	    contentType:false,

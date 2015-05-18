@@ -8,16 +8,13 @@
     <class name="com.project.bean.Form" table="form" catalog="mydb">
         <id name="id" type="java.lang.Integer">
             <column name="id" />
-            <generator class="native" />
+            <generator class="identity" />
         </id>
         <property name="name" type="java.lang.String">
-            <column name="name" length="45" not-null="true" />
+            <column name="name" length="45" />
         </property>
-        <property name="number" type="java.lang.Integer">
-            <column name="number" not-null="true" />
-        </property>
-        <property name="department" type="java.lang.Integer">
-            <column name="department" not-null="true" />
+        <property name="department" type="java.lang.String">
+            <column name="department" length="45" />
         </property>
         <property name="grade" type="java.lang.String">
             <column name="grade" length="45" />
@@ -33,6 +30,24 @@
         </property>
         <property name="time" type="java.util.Date">
             <column name="time" length="10" />
+        </property>
+        <property name="language" type="java.lang.String">
+            <column name="language" length="65535" />
+        </property>
+        <property name="specialty" type="java.lang.String">
+            <column name="specialty" length="65535" />
+        </property>
+        <property name="hobby" type="java.lang.String">
+            <column name="hobby" length="65535" />
+        </property>
+        <property name="experience" type="java.lang.String">
+            <column name="experience" length="65535" />
+        </property>
+        <property name="sex" type="java.lang.String">
+            <column name="sex" length="45" />
+        </property>
+        <property name="studentId" type="java.lang.String">
+            <column name="studentId" length="45" />
         </property>
     </class>
 </hibernate-mapping>

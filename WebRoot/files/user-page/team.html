@@ -9,9 +9,9 @@
 <link rel="stylesheet" type="text/css" href="../styles/common.css">
 <script src="//g.alicdn.com/kissy/k/1.4.8/seed-min.js"
 	type="text/javascript"></script>
-<script src="../js/news-detail.js"
+<script src="../js/user-team.js"
 	type="text/javascript"></script>
-	<script type="text/javascript">
+<script type="text/javascript">
 		window.onload=function(){
 			 var doc;
 			 if (document.all){ // IE 
@@ -25,28 +25,35 @@
 			 for(i = 0;i<len;i++){
 			 	item[i].setAttribute("class","item");
 			 }
-			 item[2].setAttribute("class","item highlight");
+			 item[7].setAttribute("class","item highlight");
 	 }	
 </script>
 </head>
 
-<body>
+<body class="clearfix">
 	<iframe src="header.html" marginheight="0" hidefocus="true"
 		frameborder="0" scrolling="no" allowtransparency="yes" seamless
 		tabindex="" style="width: 100%; height:198px;"></iframe>
-	<div class="wrapper">
-		<div class="news-title"><h3>咨询快递</h3></div>
+	<div class="wrapper clearfix">
+		<div class="news-title"><h3>指导团队</h3></div>
 		<div class="user-trace">
 			<a href="../../index">首页</a>
 			>
-			<a href="../../files/user-page/news.html">咨询快递</a>
+			<span>指导团队</span>
 		</div>
-		<div class="contain news-detail J_content">			
+		<div class="contain J_contain">			
 		</div>
-		<iframe id="head-news" src="head-news.html" marginheight="0" hidefocus="true"
+		<div class="pages">
+			<a href="#">< Prev</a>
+			<a  href="#">1</a>
+			<a href="#">Next ></a>
+		</div>
+	<iframe id="head-news" src="head-news.html" marginheight="0" hidefocus="true"
 		frameborder="0" scrolling="no" allowtransparency="yes" seamless
 		tabindex=""></iframe>
 	</div>
+	
+
 	<iframe src="footer.html" marginheight="0" hidefocus="true"
 		frameborder="0" scrolling="no" allowtransparency="yes" seamless
 		tabindex="" style="width: 100%; height: 200px;"></iframe>

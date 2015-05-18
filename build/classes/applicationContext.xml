@@ -428,4 +428,13 @@
 	</bean>
 	
 	
+	<!-- 获取网上申请 -->
+	<bean id="getApplys" class="com.project.userAction.formAction" scope="prototype">
+		<property name="formDao" ref="formDao"></property>
+	</bean>
+	
+
+
+	
+	
 </beans>

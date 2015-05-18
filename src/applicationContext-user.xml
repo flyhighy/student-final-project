@@ -99,6 +99,12 @@
 		</property>
 	</bean>
 	
+	<bean id="formDao" class="com.project.DaoImpl.formDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
 	<!-- 获取资讯	 -->
 	<bean id="getHeadnews" class="com.project.userAction.headnewsAction" scope="prototype">
 		<property name="headnewsDao" ref="headnewsDao"></property>
@@ -153,6 +159,26 @@
 	<!-- 获取详细参赛经历	 -->
 	<bean id="userCompetitionDetail" class="com.project.userAction.competitionAction" scope="prototype">
 		<property name="competitionDao" ref="competitionDao"></property>
+	</bean>
+
+	<!-- 获取指导团队	 -->
+	<bean id="getTeams" class="com.project.userAction.teamAction" scope="prototype">
+		<property name="teamDao" ref="teamDao"></property>
+	</bean>
+	
+	<!-- 保存申请表	 -->
+	<bean id="saveForm" class="com.project.userAction.formAction" scope="prototype">
+		<property name="formDao" ref="formDao"></property>
+	</bean>
+	
+		<!-- 删除网上申请 -->
+	<bean id="delForm" class="com.project.admin.form" scope="prototype">
+		<property name="formDao" ref="formDao"></property>
+	</bean>
+	
+	<!-- 查看网上申请 -->
+	<bean id="viewForm" class="com.project.admin.form" scope="prototype">
+		<property name="formDao" ref="formDao"></property>
 	</bean>
 
 	

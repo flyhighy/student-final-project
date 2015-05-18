@@ -57,6 +57,14 @@
 		<action name="userCompetitionDetail" class="userCompetitionDetail" method="userCompetitionDetail">
 		
 		</action>
+		
+		<action name="getTeams" class="getTeams" method="getTeams">
+		
+		</action>
+		
+		<action name="saveForm" class="saveForm" method="saveForm">
+			<result name="success">/files/user-page/success.html</result>
+		</action>
 
 	</package>
 </struts>

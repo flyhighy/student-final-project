@@ -24,7 +24,7 @@
             <a class="item" href="../../adminAchievement" target="_parent"><span>荣誉成果</span></a>
             <a class="item" href="../../adminUser" target="_parent"><span>成员管理</span></a>
             <a class="item" href="../../adminDownload" target="_parent"><span>下载专区</span></a>
-            <a class="item" href="#" target="_parent"><span>网上报名</span></a>
+            <a class="item" href="admin-apply.jsp" target="_parent"><span>网上报名</span></a>
             <a class="item" href="#" target="_parent"><span>留言评论</span></a>
             <a class="item" href="../../adminHeadnews" target="_parent"><span>今日头条</span></a>
             <span class="user-operation">

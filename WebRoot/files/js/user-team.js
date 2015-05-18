@@ -1,14 +1,14 @@
 KISSY.use('core,xtemplate', function(S,Core,XTemplate) {
 	var news='{{#each data}}'+
 					 '<p class="item">'+
-						 '<a class="name" href="announce-detail.html?id={{id}}">{{title}}</a>'+
+						 '<a class="name" href="team-detail.html?id={{id}}">{{name}}</a>'+
 						 '<span class="time">{{date}}</span>'+
 					 '</p>'+
 				 '{{/each}}';
 	
 	
 	function initPages(num){
-		var n = num/10;
+		var n = num/20;
 		var pages = '';
 		if(num<10){
 			pages += "<a href='#' data-id='1'>1</a>";
@@ -36,19 +36,19 @@ KISSY.use('core,xtemplate', function(S,Core,XTemplate) {
 			prev.hide();
 		}
 		
-		if(pageNum < mydata.length/10-1){
+		if(pageNum < mydata.length/20-1){
 			next.show();		
 		}else{
 			next.hide();
 		}
 		
 		var data1={};
-		data1.data=mydata.slice(pageNum*10,pageNum*10+10);
+		data1.data=mydata.slice(pageNum*20,pageNum*20+20);
 		 var render = new XTemplate(news).render(data1);
          S.one(".J_contain").html(render);
 	};
 	  KISSY.IO({
-	        url : "../robotmessage/getAnnouncement",
+	        url : "../robotmessage/getTeams",
 	        type : "post",
 	        dataType:'json',
 	        contentType:false,

@@ -2,7 +2,7 @@ KISSY.use('core,xtemplate', function(S,Core,XTemplate) {
 	
 	var tpl = '{{#each data}}'+
 				'<li class="news-item">'+
-					'<a class="news-link" href="http://localhost:8080/robotmessage/files/user-page/headnews-detail.html?id={{id}}" target="_parent">'+
+					'<a class="news-link" href="../user-page/headnews-detail.html?id={{id}}" target="_parent">'+
 						'<img class="img-wrapper" src="{{{link}}}"></img>'+
 					    '<div class="news-msg">'+
 					        '<div class="msg-item">{{title}}</div>'+
@@ -13,7 +13,7 @@ KISSY.use('core,xtemplate', function(S,Core,XTemplate) {
 				'</li>'+
 			    '{{/each}}';
 
-  	var url ="http://localhost:8080/robotmessage/getHeadnews";
+  	var url ="../robotmessage/getHeadnews";
 	  KISSY.IO({ 
 	        url : url,
 	        type : "post",
