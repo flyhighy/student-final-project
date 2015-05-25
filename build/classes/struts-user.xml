@@ -65,6 +65,22 @@
 		<action name="saveForm" class="saveForm" method="saveForm">
 			<result name="success">/files/user-page/success.html</result>
 		</action>
+		
+		<action name="saveLeaveMessage" class="saveLeaveMessage" method="saveLeaveMessage">
+			<result name="success">/files/user-page/success.html</result>
+		</action>
+		
+		<action name="getLeaveMsgs" class="getLeaveMsgs" method="getLeaveMsgs">
+		</action>
+		
+		<action name="leaveMsgDetail" class="leaveMsgDetail" method="leaveMsgDetail">
+			<result name="success">/files/pages/admin-leaveMsgDetail.jsp</result>
+		</action>
+		
+		<action name="delLeaveMsg" class="delLeaveMsg" method="delLeaveMsg">
+			<result name="success">/files/pages/admin-leavemsg.jsp</result>
+		</action>
+		
 
 	</package>
 </struts>

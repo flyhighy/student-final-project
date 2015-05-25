@@ -35,6 +35,7 @@
 			<value>com/project/bean/Competition.hbm.xml</value>
 			<value>com/project/bean/Team.hbm.xml</value>
 			<value>com/project/bean/Headnews.hbm.xml</value>
+			<value>com/project/bean/Message.hbm.xml</value>
 	   </list>
 	</property>
     </bean>
@@ -100,6 +101,12 @@
 	</bean>
 	
 	<bean id="formDao" class="com.project.DaoImpl.formDaoImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="messageDao" class="com.project.DaoImpl.messageDaoImpl">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
@@ -179,6 +186,26 @@
 	<!-- 查看网上申请 -->
 	<bean id="viewForm" class="com.project.admin.form" scope="prototype">
 		<property name="formDao" ref="formDao"></property>
+	</bean>
+	
+	<!-- 保存留言评论 -->
+	<bean id="saveLeaveMessage" class="com.project.userAction.leaveMessageAction" scope="prototype">
+		<property name="messageDao" ref="messageDao"></property>
+	</bean>
+	
+	<!-- 获取留言评论 -->
+	<bean id="getLeaveMsgs" class="com.project.userAction.leaveMessageAction" scope="prototype">
+		<property name="messageDao" ref="messageDao"></property>
+	</bean>
+	
+	<!-- 获取详细留言评论 -->
+	<bean id="leaveMsgDetail" class="com.project.userAction.leaveMessageAction" scope="prototype">
+		<property name="messageDao" ref="messageDao"></property>
+	</bean>
+	
+	<!--删除留言评论 -->
+	<bean id="delLeaveMsg" class="com.project.userAction.leaveMessageAction" scope="prototype">
+		<property name="messageDao" ref="messageDao"></property>
 	</bean>
 
 	
